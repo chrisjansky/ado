@@ -1,0 +1,38 @@
+{
+  "toMove": [
+    "app/assets/fonts/*",
+    "!app/assets/**/*.html",
+    "app/**/*.html"
+  ],
+  "injectDev": {
+    "site": [
+      "bower_components/normalize-css/normalize.css",
+      "app/assets/css/style.css",
+      "bower_components/jquery.scrollTo/jquery.scrollTo.js",
+      "bower_components/mixitup2/src/jquery.mixitup.js",
+      "app/assets/js/app-old.js",
+      "app/assets/js/app.js"
+    ],
+    "vendor": [
+    ],
+    "guide": [
+      "app/assets/css/guide.css",
+      "bower_components/chj-framework/app/guide/public/prism.css",
+      "bower_components/chj-framework/app/guide/public/prism.js",
+      "bower_components/chj-framework/app/guide/public/guide.js",
+      "bower_components/chj-framework/app/assets/js/chj-toggle.js"
+    ]
+  },
+  "injectDist": {
+    "site": [
+      "dist/assets/css/style-min.css",
+      "dist/assets/js/site-min.js"
+    ],
+    "vendor": [
+    ],
+    "guide": [
+      "dist/assets/css/guide-min.css",
+      "dist/assets/js/guide-min.js"
+    ]
+  }
+}
