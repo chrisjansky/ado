@@ -1,0 +1,118 @@
+.m-about {
+  text-align: center;
+}
+
+.m-about__text {
+  max-width: em(800);
+
+  @include margin(null auto);
+}
+
+.m-news__featured {
+  @include clearfix;
+
+  max-width: em(1100);
+  @include margin(null auto);
+
+  text-align: center;
+}
+
+.m-hero {
+  position: relative;
+
+  margin: em($ratio--l);
+
+  background-size: cover;
+  background-position: center;
+
+  height: 90vh;
+}
+
+.m-hero__head {
+  position: absolute;
+  bottom: 10%;
+  left: 7.5%;
+
+  max-width: em(850, $unit--xh);
+}
+
+.m-hero__arrow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  padding-bottom: em($ratio--s);
+
+  font-size: em($ratio--l);
+
+  text-align: center;
+
+  transition: color $duration--s;
+
+  @include state--link {
+    color: rgba($grey--900, .5);
+  }
+  @include state--active {
+    color: $grey--900;
+  }
+}
+
+.m-works {
+  margin-top: em($ratio--l);
+
+  text-align: center;
+}
+
+.m-students {
+  position: relative;
+
+  text-align: center;
+
+  &:before, &:after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 25%;
+
+    padding-bottom: 40%;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    z-index: -1;
+  }
+
+  &:before {
+    background-image: url("../images/left.jpg");
+
+    left: -8%;
+  }
+  &:after {
+    background-image: url("../images/right.jpg");
+
+    right: -8%;
+  }
+}
+
+.m-students__content {
+  max-width: em(800);
+  @include margin(null auto);
+}
+
+.m-contact {
+  text-align: center;
+}
+
+.m-contact__list {
+  @include clearfix;
+}
+
+.m-contact__item {
+  @include span-columns(4);
+}
