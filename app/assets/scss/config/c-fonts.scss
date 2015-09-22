@@ -1,0 +1,20 @@
+// Families.
+$font__sans: "Open Sans", sans-serif;
+$font__serif: "Playfair Display", serif;
+$font__caps: "Playfair Display SC", serif;
+$font__mono: monospace;
+
+// Weights.
+$font__sans--regular: 400;
+$font__sans--bold: 600;
+
+$font__serif--regular: 400;
+
+$font__caps--regular: 400;
+$font__caps--bold: 700;
+
+// Defaults.
+$default__size: $base-1;
+$default__family: $font__sans;
+$default__weight: $font__sans--regular;
+$default__leading: $spacing--b;
