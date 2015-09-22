@@ -1,152 +1,32 @@
-.container.students
-  img.boots.left(src='assets/images/left.jpg')
-  img.boots.right(src='assets/images/right.jpg')
-  h2 Seznam studentů a absolventů
-  ul.nav
-    li(data-block='bc-students') BAKALÁŘI
-    li(data-block='mag-students') MAGISTŘI
-    li(data-block='abs-students') ABSOLVENTI
-  .bc-students.active
-    .column
-      h4.seznam I. ročník
-      ul
-        li
-          a(href='#') Charlesetta Clune
-        li Mariah Flicker
-        li Emmie Vandoren
-        li Kimi Weyant
-        li
-          a(href='#') Ayesha Osmun
-        li Evelia Armes
-        li Sheree Gladstone
-        li
-          a(href='#') Carry Schiefelbein
-        li Dannette Luellen
-        li Elli Kilbourn
-    .column
-      h4.seznam II. ročník
-      ul
-        li Charlesetta Clune
-        li
-          a(href='#') Mariah Flicker
-        li Emmie Vandoren
-        li Kimi Weyant
-        li Ayesha Osmun
-        li Evelia Armes
-        li
-          a(href='#') Sheree Gladstone
-        li Carry Schiefelbein
-        li Dannette Luellen
-        li Elli Kilbourn
-    .column
-      h4.seznam III. ročník
-      ul
-        li Charlesetta Clune
-        li Mariah Flicker
-        li Emmie Vandoren
-        li
-          a(href='#') Kimi Weyant
-        li Ayesha Osmun
-        li Evelia Armes
-        li Sheree Gladstone
-        li
-          a(href='#') Carry Schiefelbein
-        li Dannette Luellen
-        li Elli Kilbourn
-  .mag-students
-    .column
-      h4.seznam IV. ročník
-      ul
-        li Charlesetta Clune
-        li Mariah Flicker
-        li Emmie Vandoren
-        li Kimi Weyant
-        li Ayesha Osmun
-        li Evelia Armes
-        li Sheree Gladstone
-        li Carry Schiefelbein
-        li Dannette Luellen
-        li Elli Kilbourn
-    .column
-      h4.seznam V. ročník
-      ul
-        li Charlesetta Clune
-        li Mariah Flicker
-        li Emmie Vandoren
-        li Kimi Weyant
-        li Ayesha Osmun
-        li Evelia Armes
-        li Sheree Gladstone
-        li Carry Schiefelbein
-        li Dannette Luellen
-        li Elli Kilbourn
-  .abs-students
-    .column
-      h4.seznam  
-      ul
-        li Charlesetta Clune
-        li Mariah Flicker
-        li Emmie Vandoren
-        li Kimi Weyant
-        li Ayesha Osmun
-        li Evelia Armes
-        li Sheree Gladstone
-        li Carry Schiefelbein
-        li Dannette Luellen
-        li Elli Kilbourn
-        li Charlesetta Clune
-        li Mariah Flicker
-        li Emmie Vandoren
-        li Kimi Weyant
-        li Ayesha Osmun
-        li Evelia Armes
-        li Sheree Gladstone
-        li Carry Schiefelbein
-        li Dannette Luellen
-        li Elli Kilbourn
-    .column
-      h4.seznam  
-      ul
-        li Charlesetta Clune
-        li Mariah Flicker
-        li Emmie Vandoren
-        li Kimi Weyant
-        li Ayesha Osmun
-        li Evelia Armes
-        li Sheree Gladstone
-        li Carry Schiefelbein
-        li Dannette Luellen
-        li Elli Kilbourn
-        li Charlesetta Clune
-        li Mariah Flicker
-        li Emmie Vandoren
-        li Kimi Weyant
-        li Ayesha Osmun
-        li Evelia Armes
-        li Sheree Gladstone
-        li Carry Schiefelbein
-        li Dannette Luellen
-        li Elli Kilbourn
-    .column
-      h4.seznam  
-      ul
-        li Charlesetta Clune
-        li Mariah Flicker
-        li Emmie Vandoren
-        li Kimi Weyant
-        li Ayesha Osmun
-        li Evelia Armes
-        li Sheree Gladstone
-        li Carry Schiefelbein
-        li Dannette Luellen
-        li Elli Kilbourn
-        li Charlesetta Clune
-        li Mariah Flicker
-        li Emmie Vandoren
-        li Kimi Weyant
-        li Ayesha Osmun
-        li Evelia Armes
-        li Sheree Gladstone
-        li Carry Schiefelbein
-        li Dannette Luellen
-        li Elli Kilbourn
+section#students.m-students(data-section)
+  h2.t-head--high Seznam studentů a absolventů
+
+  .m-students__content
+    ul.o-tabs(data-tabs)
+      - var groupCount, peopleGrouped
+      each studentGroup in ["bca", "mga", "grad"]
+
+        li.o-tabs__item.o-group(class="o-group--#{studentGroup}")
+          button.o-tabs__link.o-toggle.t-caps
+            case studentGroup
+              when "bca"
+                | Bakaláři
+                - groupCount = 3
+                - peopleGrouped = true
+              when "mga"
+                | Magistři
+                - groupCount = 2
+                - peopleGrouped = true
+              when "grad"
+                | Absolventi
+                - groupCount = 1
+                - peopleGrouped = false
+
+          .o-tabs__content
+            while groupCount > 0
+              if (studentGroup == "grad")
+                include ../partials/_people
+              else
+                .o-class
+                  include ../partials/_people
+              - groupCount--

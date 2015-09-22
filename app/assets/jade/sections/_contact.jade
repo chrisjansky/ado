@@ -1,38 +1,41 @@
-.container.contact
-  h2 KONTAKTY
-  .column
-    h4  VEDOUCÍ ATELIÉRU
-    p
-      | MgA. Veronika Jakóbková
-      br
-      | +420 576 036 406
-      br
-      | jakobkova@fmk.utb.cz
-      br
-      | Kancelář: U16/304
-  .column
-    h4  ZÁSTUPCE VEDOUCÍ ATELIÉRU
-    p
-      | MgA. Jana Buch
-      br
-      | Tel.: +420 576 036 406
-      br
-      | mobil: +420 724 646 706
-      br
-      | buch@fmk.utb.cz
-      br
-      | Kancelář: U16/304
-  .column
-    h4  SEKRETÁŘKA ATELIÉRU
-    p
-      | Mgr. Pavla Kučeříková 
-      br
-      | Tel.: +420 57 603 6412 
-      br
-      | Mobil: +420 606 777 236 
-      br
-      | kucerikova@fmk.utb.cz 
-      br
-      | Kancelář: U16/408
-  div
-    iframe(src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2605.68500745352!2d17.679840600000002!3d49.2255006!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4713735c01f5289f%3A0x4d8d7ba59858dbf!2zdMWZLiBUb23DocWhZSBCYXRpIDQzNDIsIDc2MCAwMSBabMOtbg!5e0!3m2!1scs!2scz!4v1417977501848', frameborder='0', style='border:0')
+section#contact.m-contact(data-section)
+  .l-wrap
+    h2.m-contact__title.t-head--high Kontakty
+
+    .m-contact__list
+      .m-contact__item
+        h4.t-head--low Vedoucí ateliéru
+        p
+          | MgA. Jana Buch
+          br
+          | +420 576 036 406
+          br
+          a(href="#") buch@fmk.utb.cz
+          br
+          | Kancelář: U16/304
+      .m-contact__item
+        h4.t-head--low Zástupce vedoucí ateliéru
+        p
+          | MgA. Veronika Jakóbková
+          br
+          | Tel.: +420 576 036 406
+          br
+          | mobil: +420 724 646 706
+          br
+          a(href="#") jakobkova@fmk.utb.cz
+          br
+          | Kancelář: U16/304
+      .m-contact__item
+        h4.t-head--low Sekretářka ateliéru
+        p
+          | Mgr. Pavla Kučeříková
+          br
+          | Tel.: +420 57 603 6412
+          br
+          | Mobil: +420 606 777 236
+          br
+          a(href="#") kucerikova@fmk.utb.cz 
+          br
+          | Kancelář: U16/408
+
+  .o-map#js-map

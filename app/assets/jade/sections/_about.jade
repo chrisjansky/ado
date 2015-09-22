@@ -1,32 +1,31 @@
-.container.about
-  h2 O NÁS
-  p
-    | Studium je zaměřeno na získávání znalostí a výtvarného rozhledu v oboru, rozvinutí 
-    br
-    | tvůrčích postupů při navrhování, na úzkou spolupráci s průmyslovou 
-    br
-    |  výrobou a v neposlední řadě na profesionální kompletaci díla. Základní a nedílnou 
-    br
-    | součástí výuky jsou tvůrčí projekty realizované pod vedením pedagoga.
-  a(href='http://www.utb.cz/fmk/struktura/design-obuvi') /více info/
-  .aktuality
-    h2 AKTUALITY
-    .column
-      h4  ÚČAST NA VELETRHU ŠKOL
-      img(src='assets/images/bota2.jpg')
-      p  Mauris eleifend porttitor auctor. Curabitur vitae mollis diam.
-      i.ion-more
-    .column
-      h4
-        | SPOLUPRÁCE
-        br
-        |  S FIRMOU INTEL
-      p
-        | Mauris eleifend porttitor auctor. Curabitur vitae mollis diam. Aliquam erat volutpat. Pellentesque ultricies, risus vitae fermentum suscipit, turpis sapien posuere tellus, semper blandit libero eros congue libero,turpis sapien posuere tellus, semper blandit libero eros..
-      i.ion-more
-    .column
-      h4  ÚČAST NA VELETRHU ŠKOL
-      img(src='assets/images/bota1.jpg')
-      p  Mauris eleifend porttitor auctor. Curabitur vitae mollis diam.
-      i.ion-more
-    a(href='') /archiv/
+section#about.m-about(data-section)
+  .l-wrap.l-wrap--horizontal
+    h2.m-about__title.t-head--high O nás
+    p.m-about__text.t-text Studium je zaměřeno na získávání znalostí a výtvarného rozhledu v oboru, rozvinutí  tvůrčích postupů při navrhování, na úzkou spolupráci s průmyslovou výrobou a v neposlední řadě na profesionální kompletaci díla. Základní a nedílnou součástí výuky jsou tvůrčí projekty realizované pod vedením pedagoga.
+    a.o-textlink.t-link--primary(href="http://www.utb.cz/fmk/struktura/design-obuvi") Více info
+
+  .m-news.l-wrap
+    h2.m-news__title.t-head--high Aktuality
+
+    .m-news__featured
+      .o-article
+        a(href="#").o-article__link
+          h4.o-article__title.t-head--low Účast na veletrhu škol
+        img(src="assets/images/bota2.jpg", alt="Bota")
+        p.p-text Mauris eleifend porttitor auctor. Curabitur vitae mollis diam.
+        a(href="#").o-article__button.t-link--light.ion-more
+
+      .o-article
+        a(href="#").o-article__link
+          h4.o-article__title.t-head--low Spolupráce s firmou Intel
+        p.p-text Mauris eleifend porttitor auctor. Curabitur vitae mollis diam. Aliquam erat volutpat. Pellentesque ultricies, risus vitae fermentum suscipit, turpis sapien posuere tellus, semper blandit libero eros congue libero,turpis sapien posuere tellus, semper blandit libero eros..
+        a(href="#").o-article__button.t-link--light.ion-more
+
+      .o-article
+        a(href="#").o-article__link
+          h4.o-article__title.t-head--low Další novinka
+        img(src="assets/images/bota1.jpg", alt="Bota")
+        p.p-text Mauris eleifend porttitor auctor. Curabitur vitae mollis diam.
+        a(href="#").o-article__button.t-link--light.ion-more
+
+    a.o-textlink.t-link--primary(href="archive") Archiv
