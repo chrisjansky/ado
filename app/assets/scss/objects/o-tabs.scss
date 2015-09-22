@@ -1,0 +1,37 @@
+.o-tabs {
+  padding-left: 0;
+  @include clearfix;
+
+  margin-top: em($ratio--l);
+}
+
+.o-tabs__item {
+  display: inline;
+
+  & + & {
+    margin-left: em($ratio--xl);
+  }
+}
+
+.o-tabs__link {
+  display: inline-block;
+}
+
+.o-tabs__content {
+  display: none;
+  width: 100%;
+
+  margin-top: em($ratio--m);
+}
+
+// Tab states.
+.tab--is-active {
+  @include state--all {
+    color: $color1--500;
+  }
+}
+
+.tab--is-open {
+  display: block;
+  float: left;
+}

@@ -1,0 +1,67 @@
+.t-head--top {
+  font-family: $font__serif;
+  font-weight: $font__serif__regular;
+  font-size: em($unit--xh);
+
+  line-height: $spacing--xs;
+
+  color: $grey--700;
+}
+
+.t-head--high {
+  font-family: $font__caps;
+  font-weight: $font__caps--regular;
+
+  font-size: em($ratio--m);
+  letter-spacing: em($ratio--t);
+  text-align: center;
+  text-transform: lowercase;
+
+  color: $grey--600;
+}
+
+.t-head--low {
+  font-weight: $font__sans--regular;
+  letter-spacing: em($ratio--t);
+
+  text-transform: uppercase;
+}
+
+.t-caps {
+  text-transform: uppercase;
+
+  letter-spacing: em($ratio--t);
+}
+
+p {
+  font-size: em(14);
+}
+
+// h3 {
+//   font-weight: 600;
+//   margin-top: 20px;
+//   font-size: 15px;
+//   letter-spacing: 0.75px;
+//   text-align: center;
+//   text-transform: uppercase;
+// }
+
+.t-link--primary {
+  text-decoration: none;
+
+  @include state--link {
+    color: $color1--300;
+  }
+  @include state--active {
+    color: $color1--500;
+  }
+}
+
+.t-link--light {
+  @include state--link {
+    color: $grey--100;
+  }
+  @include state--active {
+    color: $grey--300;
+  }
+}
