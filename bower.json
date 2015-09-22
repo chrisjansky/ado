@@ -19,6 +19,7 @@
     "jquery": "~2.1.1",
     "chj-framework": "~0.5.5",
     "mixitup2": "~2.1.10",
-    "jquery.scrollTo": "~2.1.1"
+    "headroom.js": "~0.7.0",
+    "waypoints": "~4.0.0"
   }
 }
