@@ -28,6 +28,7 @@
 }
 
 .t-caps {
+  font-size: em($unit--s);
   text-transform: uppercase;
 
   letter-spacing: em($ratio--t);
@@ -53,7 +54,7 @@ p {
     color: $color1--300;
   }
   @include state--active {
-    color: $color1--500;
+    color: $color1--700;
   }
 }
 
