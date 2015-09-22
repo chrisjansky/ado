@@ -27,7 +27,7 @@ Config
 Site
 
 */
-// @import "chj-framework/app/assets/scss/base/b-default";
+@import "chj-framework/app/assets/scss/base/b-default";
 @import "chj-framework/app/assets/scss/base/b-typography";
 @import "chj-framework/app/assets/scss/base/b-interactive";
 
@@ -44,16 +44,16 @@ Typography
 
 Styleguide 3.
 */
-// @import "chj-framework/app/assets/scss/typography/t-head";
+@import "typography/typography";
 
 /*
 Objects
 
 Styleguide 4.
 */
+@import "objects/objects";
 @import "objects/o-tabs";
 
-@import "misc/old";
-@import "misc/typography";
-@import "misc/gallery";
 @import "misc/temp";
+
+@import "modules/modules";
