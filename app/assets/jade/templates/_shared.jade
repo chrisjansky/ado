@@ -1,5 +1,5 @@
 block template-variables
-  - var page = {title: "Title", description: "Project description."}
+  - var page = {title: "FMK/ADO", description: "Web Ateliéru Design obuvi na Univerzitě Tomáše Bati ve Zlíně."}
 
 doctype
 html.no-js(lang="en")
@@ -11,7 +11,7 @@ html.no-js(lang="en")
       meta(name="description", content=page.description)
       meta(name="viewport" content="width=device-width, initial-scale=1.0")
 
-      link(href="http://fonts.googleapis.com/css?family=Playfair+Display:400|Playfair+Display+SC:700|Open+Sans:400,600", rel="stylesheet", type="text/css")
+      link(href="http://fonts.googleapis.com/css?family=Playfair+Display:400|Playfair+Display+SC:400,700|Open+Sans:400,600", rel="stylesheet", type="text/css")
       link(href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css", rel="stylesheet", type="text/css")
 
   body
@@ -22,6 +22,7 @@ html.no-js(lang="en")
 
     block template-foot
       script(src="http://code.jquery.com/jquery-latest.min.js")
+      script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYIdR688TiWL5Pc5nkiiI8c3ahWndxSFo")
 
       <!-- build:remove -->
       script window.jQuery || document.write("<script src='../bower_components/jquery/dist/jquery.js'><\/script>")
