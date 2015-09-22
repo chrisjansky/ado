@@ -1,0 +1,137 @@
+.m-about {
+  text-align: center;
+}
+
+.m-about__text {
+  max-width: em(800);
+
+  @include margin(null auto);
+}
+
+.m-news__featured {
+  @include clearfix;
+
+  max-width: em(1100);
+  @include margin(null auto);
+
+  text-align: center;
+}
+
+.o-article {
+  @include span-columns(4);
+
+  img {
+    max-width: em(200);
+    @include margin(null auto);
+  }
+}
+
+.o-article__link {
+  text-decoration: none;
+}
+
+.o-article__button {
+  font-size: em($ratio--m);
+}
+
+.m-hero {
+  position: relative;
+
+  margin: em($ratio--l);
+
+  background-size: cover;
+  background-position: center;
+
+  height: 90vh;
+}
+
+.m-hero__head {
+  position: absolute;
+  bottom: 10%;
+  left: 7.5%;
+
+  max-width: em(850, $unit--xh);
+}
+
+.m-students {
+  position: relative;
+
+  text-align: center;
+
+  &:before, &:after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 25%;
+
+    padding-bottom: 40%;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    z-index: -1;
+  }
+
+  &:before {
+    background-image: url("../images/left.jpg");
+
+    left: -8%;
+  }
+  &:after {
+    background-image: url("../images/right.jpg");
+
+    right: -8%;
+  }
+}
+
+.m-students__content {
+  max-width: em(800);
+  @include margin(null auto);
+}
+
+.o-class {
+  @include span-columns(4);
+
+  .o-group--mga &:first-child {
+    @include shift(2);
+  }
+}
+
+.o-people {
+  list-style-type: none;
+  padding-left: 0;
+
+  @include clearfix;
+}
+
+.o-people__item {
+  margin-top: em($ratio--xxs);
+
+  .o-group--grad & {
+    @include span-columns(4);
+    @include omega(3n);
+  }
+}
+
+.o-people__title {
+  display: block;
+
+  margin-bottom: em($ratio--b);
+}
+
+.m-contact {
+  text-align: center;
+}
+
+.m-contact__list {
+  @include clearfix;
+}
+
+.m-contact__item {
+  @include span-columns(4);
+}
