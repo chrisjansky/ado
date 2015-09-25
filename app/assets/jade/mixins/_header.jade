@@ -1,0 +1,24 @@
+mixin header(mode)
+  header#js-header.o-header.l-wrap.l-wrap--small
+    .l-inline
+    
+      .l-inline__cell
+        a.o-logo(href="index")
+          | UTB/FMK/
+          span.o-logo__studio Ateliér Design obuvi
+
+      .l-inline__cell
+        nav.o-nav
+          ul.o-nav__list
+            if (mode == "subpage")
+              each page in pages
+                li.o-nav__item
+                  a.o-nav__link(href="index#section-#{page.slug}", data-scrollto, data-nav-link)= page.title
+            else
+              each page in pages
+                li.o-nav__item
+                  a.o-nav__link(href="##{page.slug}", data-scrollto, data-nav-link)= page.title
+            li.o-nav__item
+              a(href="#").o-nav__link.o-nav__link--active CZ
+              span.o-nav__divider /
+              a(href="#").o-nav__link EN
