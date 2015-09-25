@@ -1,0 +1,20 @@
+{
+  "pages": [
+    {
+      "slug": "gallery",
+      "title": "Práce"
+    },
+    {
+      "slug": "about",
+      "title": "O nás"
+    },
+    {
+      "slug": "students",
+      "title": "Seznam studentů"
+    },
+    {
+      "slug": "contact",
+      "title": "Kontakty"
+    }
+  ]
+}
