@@ -36,6 +36,7 @@ Layout
 
 Styleguide 2.
 */
+@import "layout/layout";
 @import "chj-framework/app/assets/scss/layout/l-wrap";
 @import "chj-framework/app/assets/scss/layout/l-inline";
 
@@ -53,6 +54,7 @@ Styleguide 4.
 */
 @import "objects/objects";
 @import "objects/o-tabs";
+@import "chj-framework/app/assets/scss/objects/o-carousel";
 
 @import "misc/temp";
 
