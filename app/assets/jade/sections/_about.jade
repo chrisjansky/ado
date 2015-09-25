@@ -7,25 +7,25 @@ section#about.m-about(data-section)
   .m-news.l-wrap
     h2.m-news__title.t-head--high Aktuality
 
-    .m-news__featured
-      .o-article
-        a(href="#").o-article__link
+    .m-news__list
+      article.o-article.o-article--featured
+        a(href="archive#news-1").o-article__link
           h4.o-article__title.t-head--low Účast na veletrhu škol
         img(src="assets/images/bota2.jpg", alt="Bota")
-        p.p-text Mauris eleifend porttitor auctor. Curabitur vitae mollis diam.
-        a(href="#").o-article__button.t-link--light.ion-more
+        p.p-text: +dummy(1, "sentences")
+        a(href="archive#news-1").o-article__button.t-link--light.ion-more
 
-      .o-article
-        a(href="#").o-article__link
+      article.o-article.o-article--featured
+        a(href="archive#news-2").o-article__link
           h4.o-article__title.t-head--low Spolupráce s firmou Intel
-        p.p-text Mauris eleifend porttitor auctor. Curabitur vitae mollis diam. Aliquam erat volutpat. Pellentesque ultricies, risus vitae fermentum suscipit, turpis sapien posuere tellus, semper blandit libero eros congue libero,turpis sapien posuere tellus, semper blandit libero eros..
-        a(href="#").o-article__button.t-link--light.ion-more
+        p.p-text: +dummy(2, "sentences")
+        a(href="archive#news-2").o-article__button.t-link--light.ion-more
 
-      .o-article
-        a(href="#").o-article__link
+      article.o-article.o-article--featured
+        a(href="archive#news-3").o-article__link
           h4.o-article__title.t-head--low Další novinka
         img(src="assets/images/bota1.jpg", alt="Bota")
-        p.p-text Mauris eleifend porttitor auctor. Curabitur vitae mollis diam.
-        a(href="#").o-article__button.t-link--light.ion-more
+        p.p-text: +dummy(1, "sentences")
+        a(href="archive#news-3").o-article__button.t-link--light.ion-more
 
     a.o-textlink.t-link--primary(href="archive") Archiv

@@ -31,36 +31,9 @@ section#gallery.m-gallery(data-section, data-mixitup)
           when 4
             - tags = "master collab"
 
-        a.o-work(href="#", class=tags, data-target)
+        a.o-work(href="project-detail", class=tags, data-target)
           img.o-work__image(src="assets/images/gallery/#{workCount}.jpg", alt="Image")
           .o-work__info
-            | Jméno Příjmení
-            br
-            | Název práce
+            h3.o-work__title.t-head--bottom Název práce
+            span.o-work__name.t-smallcaps Jméno Příjmení
         - workCount--
-
-  //- .popup
-  //-   .popup-links.left
-  //-     a
-  //-       span.return
-  //-         i.ion-ios-arrow-left
-  //-         | zpět do galerie
-  //-   .popup-links.right
-  //-     a
-  //-       span
-  //-         | další práce studenta
-  //-         i.ion-ios-arrow-right
-
-  //- .popup-container
-  //-   .big-photo(style="background-image: url('assets/images/5.jpg');")
-  //-   .popup-content
-  //-     h2 Jméno Trlicová
-  //-     h3 New York
-  //-     p
-  //-       | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.
-  //-     .popup-images
-  //-       img(src='assets/images/ob_dp_2014_j_rosikova_greyscale_001.jpg')
-  //-       img(src='assets/images/ob_dp_2014_j_rosikova_greyscale_002.jpg')
-  //-       img(src='assets/images/ob_dp_2014_j_rosikova_greyscale_003.jpg')
-  //-       img(src='assets/images/ob_dp_2014_j_rosikova_greyscale_004.jpg')
-  //-       img(src='assets/images/ob_dp_2014_j_rosikova_greyscale_005.jpg')
