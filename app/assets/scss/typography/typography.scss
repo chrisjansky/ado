@@ -21,10 +21,17 @@
 }
 
 .t-head--low {
+  font-size: em($ratio--b);
   font-weight: $font__sans--regular;
   letter-spacing: em($ratio--t);
 
   text-transform: uppercase;
+}
+
+.t-head--bottom {
+  font-size: em($ratio--b);
+
+  font-weight: $font__sans--regular;
 }
 
 .t-caps {
@@ -34,18 +41,16 @@
   letter-spacing: em($ratio--t);
 }
 
+.t-smallcaps {
+  font-size: em($unit--xs);
+  text-transform: uppercase;
+
+  letter-spacing: em($ratio--t);
+}
+
 p {
   font-size: em(14);
 }
-
-// h3 {
-//   font-weight: 600;
-//   margin-top: 20px;
-//   font-size: 15px;
-//   letter-spacing: 0.75px;
-//   text-align: center;
-//   text-transform: uppercase;
-// }
 
 .t-link--primary {
   text-decoration: none;
