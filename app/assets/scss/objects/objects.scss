@@ -56,9 +56,7 @@
 }
 
 .o-nav__link:after {
-  position: absolute;
-  left: 50%;
-  top: 110%;
+  @include position(absolute, 110% null null 50%);
 
   content: "";
   display: block;
@@ -66,7 +64,7 @@
   width: 0;
   height: 1px;
 
-  background-color: $grey--600;
+  background-color: currentColor;
   transition: width $duration--b, left $duration--b;
 }
 
@@ -77,7 +75,9 @@
 }
 
 .o-textlink {
-  display: block;
+  position: relative;
+
+  display: inline-block;
 
   font-family: $font__caps;
   letter-spacing: em($ratio--t);
@@ -87,6 +87,36 @@
   margin-top: em($ratio--m);
 
   transition: color $duration--s;
+
+  @include state--active {
+    &:after {
+      width: 100%;
+      left: 0;
+    }
+  }
+}
+
+.o-textlink:after {
+  @include position(absolute, 110% null null 50%);
+
+  content: "";
+  display: block;
+  
+  width: 0;
+  height: 1px;
+
+  background-color: currentColor;
+  transition: width $duration--b, left $duration--b;
+}
+
+.o-iconlink {
+  text-decoration: none;
+}
+.o-iconlink__icon--left {
+  margin-right: em($ratio--s);
+}
+.o-iconlink__icon--right {
+  margin-left: em($ratio--s);
 }
 
 .o-filter {
@@ -104,6 +134,8 @@
 }
 
 .o-toggle {
+  position: relative;
+
   background-color: transparent;
   border: none;
   padding: 0;
@@ -119,13 +151,30 @@
   }
 }
 
+.o-toggle:after {
+  @include position(absolute, 110% null null 50%);
+
+  content: "";
+  display: block;
+  
+  width: 0;
+  height: 1px;
+
+  background-color: currentColor;
+  transition: width $duration--b, left $duration--b;
+}
+
 .o-toggle--active {
   color: $color1--500;
+
+  &:after {
+    width: 100%;
+    left: 0;
+  }
 }
 
 .o-work {
-  // Idiotic way of making MixItUp work.
-  display: none;
+  display: inline-block;
 
   position: relative;
 
@@ -133,15 +182,27 @@
 
   width: em(240);
 
+  background-color: $grey--900;
+
   margin-right: flex-gutter();
   margin-bottom: flex-gutter();
+}
+
+[data-target] {
+  // Idiotic way of making MixItUp work.
+  display: none;
 }
 
 .o-work__image {
   display: block;
 
   width: 100%;
-  height: 100%;
+
+  transition: opacity $duration--s;
+
+  .o-work:hover & {
+    opacity: .5;
+  }
 }
 
 .o-work__info {
@@ -152,16 +213,12 @@
   left: 0;
 
   width: 100%;
-  font-size: em(14);
 
   text-align: left;
-  text-transform: uppercase;
 
-  letter-spacing: em($ratio--t);
   color: white;
-  padding: em($ratio--s, 14) em($ratio--b, 14);
+  @include padding(null em($ratio--s) em($unit--b) em($ratio--m));
 
-  background-color: rgba($grey--900, .65);
   transition: transform $duration--b;
 
   transform: translateY(100%);
@@ -169,6 +226,14 @@
   .o-work:hover & {
     transform: translateY(0);
   }
+}
+
+.o-work__title {
+  @include margin(0 null);
+}
+
+.o-work__name {
+  color: rgba(white, .5);
 }
 
 .o-map {
@@ -183,7 +248,7 @@
   }
 }
 
-.o-article {
+.o-article--featured {
   @include span-columns(4);
 
   img {
@@ -192,7 +257,43 @@
   }
 }
 
+.o-article--archived {
+  @include clearfix;
+
+  margin-top: em($ratio--l);
+}
+
+.o-article__figure {
+  @include span-columns(2);
+
+  background-color: $grey--900;
+}
+
+.o-article__image {
+  display: block;
+
+  width: 100%;
+
+  transition: opacity $duration--s;
+
+  .o-article__figure:hover & {
+    opacity: .5;
+  }
+}
+
+.o-article__title {
+  @include shift(2);
+}
+
+.o-article__content {
+  @include span-columns(8);
+
+  @include collapse-children;
+}
+
 .o-article__link {
+  display: block;
+
   text-decoration: none;
 }
 
@@ -228,4 +329,103 @@
   display: block;
 
   margin-bottom: em($ratio--b);
+}
+
+.o-pagination {
+  list-style-type: none;
+  padding-left: 0;
+
+  text-align: center;
+
+  margin-top: em($ratio--l);
+}
+.o-pagination__item {
+  display: inline-block;
+
+  & + & {
+    margin-left: em($ratio--m);
+  }
+}
+.o-pagination__link {
+  position: relative;
+
+  display: block;
+  width: em(20);
+
+  text-decoration: none;
+
+  &:after {
+    @include position(absolute, 110% null null 50%);
+
+    content: "";
+    display: block;
+    
+    width: 0;
+    height: 1px;
+
+    background-color: currentColor;
+    transition: width $duration--b, left $duration--b;
+  }
+
+  @include state--active {
+    &:after {
+      width: 100%;
+      left: 0;
+    }
+  }
+}
+.o-pagination__number {
+  position: relative;
+
+  display: block;
+  width: em(20);
+
+  color: $grey--900;
+
+  &:after {
+    @include position(absolute, 110% null null 0%);
+
+    content: "";
+    display: block;
+    
+    width: 100%;
+    height: 1px;
+
+    background-color: currentColor;
+    transition: width $duration--b, left $duration--b;
+  }
+}
+
+.o-carousel__item {
+  width: auto;
+  height: em(500);
+
+  & + & {
+    margin-left: flex-gutter();
+  }
+}
+
+.o-carousel__image {
+  height: 100%;
+}
+
+.o-description {
+  text-align: center;
+
+  max-width: em(900);
+  @include margin(null auto);
+}
+
+.o-bar {
+  position: relative;
+}
+
+.o-bar__title {
+  @include position(absolute, 0 em(300) null em(300));
+
+  text-align: center;
+
+  pointer-events: none;
+
+  @include collapse-children;
 }

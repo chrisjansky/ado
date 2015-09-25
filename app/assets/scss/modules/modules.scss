@@ -8,13 +8,13 @@
   @include margin(null auto);
 }
 
-.m-news__featured {
+.m-news__list {
   @include clearfix;
 
   max-width: em(1100);
   @include margin(null auto);
 
-  text-align: center;
+  // text-align: center;
 }
 
 .m-hero {
@@ -115,4 +115,13 @@
 
 .m-contact__item {
   @include span-columns(4);
+}
+
+.m-profile {
+  padding-bottom: 0;
+}
+
+.m-archive__list {
+  max-width: em(1100);
+  @include margin(null auto);
 }
