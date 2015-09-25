@@ -1,0 +1,49 @@
+extends templates/_site
+
+block template-content
+  +header("subpage")
+
+  .m-profile.l-nudge.l-wrap
+    h1.t-head--high Pavla Nováková
+
+  .m-works
+    - var workCount = 10
+    while workCount > 0
+      a.o-work(href="project-detail")
+        img.o-work__image(src="assets/images/gallery/#{workCount}.jpg", alt="Image")
+        .o-work__info
+          h3.o-work__title.t-head--bottom Název práce
+      - workCount--
+
+  .m-students(data-section)
+    h2.t-head--low Další studenti a absolventi
+
+    .m-students__content
+      ul.o-tabs(data-tabs)
+        - var groupCount, peopleGrouped
+        each studentGroup in ["bca", "mga", "grad"]
+
+          li.o-tabs__item.o-group(class="o-group--#{studentGroup}")
+            button.o-tabs__link.o-toggle.t-caps
+              case studentGroup
+                when "bca"
+                  | Bakaláři
+                  - groupCount = 3
+                  - peopleGrouped = true
+                when "mga"
+                  | Magistři
+                  - groupCount = 2
+                  - peopleGrouped = true
+                when "grad"
+                  | Absolventi
+                  - groupCount = 1
+                  - peopleGrouped = false
+
+            .o-tabs__content
+              while groupCount > 0
+                if (studentGroup == "grad")
+                  include partials/_people
+                else
+                  .o-class
+                    include partials/_people
+                - groupCount--

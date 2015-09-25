@@ -1,0 +1,31 @@
+extends templates/_site
+
+block template-content
+  +header("subpage")
+
+  .l-nudge.l-wrap
+    h1.t-head--high Název projektu
+    .o-bar
+      .o-bar__title
+        span.t-caps Pavla Nováková
+      .l-inline
+        .l-inline__cell
+          a.o-iconlink(href="index#section-gallery")
+            i.o-iconlink__icon--left.ion-ios-arrow-left
+            span.t-caps  Zpět do galerie
+        .l-inline__cell
+          a.o-iconlink(href="student-detail")
+            span.t-caps Další práce studenta 
+            i.o-iconlink__icon--right.ion-ios-arrow-right
+
+  .o-carousel.swiper-container(data-carousel).l-wrap.l-wrap--horizontal
+    ul.o-carousel__list.swiper-wrapper
+      li.o-carousel__item.swiper-slide
+        img.o-carousel__image(src="assets/images/5.jpg", alt="Project Image")
+      each photoNumber in ["1", "2", "3", "4"]
+        li.o-carousel__item.swiper-slide
+          img(src="http://unsplash.it/#{photoNumber * 200}/500/?image=#{photoNumber * 20}", alt="unsplash.it")
+
+  .l-wrap.o-description
+    h2.t-head--low O Projektu
+    p.t-text: +dummy(5, "sentences")
