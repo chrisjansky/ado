@@ -26,8 +26,11 @@
 
 // Tab states.
 .tab--is-active {
-  @include state--all {
-    color: $color1--500;
+  color: $color1--500;
+
+  &:after {
+    width: 100%;
+    left: 0;
   }
 }
 
