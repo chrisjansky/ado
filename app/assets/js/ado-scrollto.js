@@ -1,9 +1,11 @@
 // Scroll to anchor.
+var opticalOffset = vHeight * .1
+
 $("[data-scrollto]").click(function() {
   window.location.hash = "section-" + this.hash.slice(1)
 
   $("html, body").animate({
-    scrollTop: $($(this).attr("href")).offset().top - vHeight * .1
+    scrollTop: $($(this).attr("href")).offset().top - opticalOffset
   }, durBasic);
   return false
 });
@@ -12,9 +14,9 @@ $("[data-scrollto]").click(function() {
 if (location.hash) {
   var smoothScrollTo = "#" + location.hash.slice(9)
 
-  setTimeout(function() {
+  $(window).load(function() {
     $("html, body").animate({
-      scrollTop: $(smoothScrollTo).offset().top
+      scrollTop: $(smoothScrollTo).offset().top - opticalOffset
     }, durBasic);
-  }, durLong)
+  })
 }
