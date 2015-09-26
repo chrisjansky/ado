@@ -7,18 +7,20 @@
   "injectDev": {
     "site": [
       "bower_components/normalize-css/normalize.css",
+      "bower_components/idangerous-swiper/dist/css/swiper.css",
       "app/assets/css/style.css",
       "bower_components/mixitup2/src/jquery.mixitup.js",
       "bower_components/headroom.js/dist/headroom.js",
       "bower_components/waypoints/lib/jquery.waypoints.js",
+      "bower_components/idangerous-swiper/dist/js/swiper.jquery.js",
       "app/assets/js/app.js",
-      "app/assets/js/ado-scrollto.js",
       "app/assets/js/ado-map.js",
       "app/assets/js/ado-tabs.js",
       "app/assets/js/ado-headroom.js",
       "app/assets/js/ado-mixitup.js",
       "app/assets/js/ado-waypoints.js",
-      "bower_components/chj-framework/app/assets/js/chj-tabs.js",
+      "app/assets/js/ado-scrollto.js",
+      "bower_components/chj-framework/app/assets/js/chj-carousel.js",
       "bower_components/chj-framework/app/assets/js/chj-external.js"
     ],
     "vendor": [
