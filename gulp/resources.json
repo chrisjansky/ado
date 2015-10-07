@@ -1,6 +1,5 @@
 {
   "toMove": [
-    "app/assets/fonts/*",
     "!app/assets/**/*.html",
     "app/**/*.html"
   ],
@@ -9,6 +8,8 @@
       "bower_components/normalize-css/normalize.css",
       "bower_components/idangerous-swiper/dist/css/swiper.css",
       "app/assets/css/style.css",
+
+      "bower_components/imagesloaded/imagesloaded.pkgd.js",
       "bower_components/mixitup2/src/jquery.mixitup.js",
       "bower_components/headroom.js/dist/headroom.js",
       "bower_components/waypoints/lib/jquery.waypoints.js",
@@ -20,7 +21,8 @@
       "app/assets/js/ado-mixitup.js",
       "app/assets/js/ado-waypoints.js",
       "app/assets/js/ado-scrollto.js",
-      "bower_components/chj-framework/app/assets/js/chj-carousel.js",
+      "app/assets/js/ado-swiper.js",
+
       "bower_components/chj-framework/app/assets/js/chj-external.js"
     ],
     "vendor": [
