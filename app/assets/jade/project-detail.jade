@@ -4,7 +4,7 @@ block template-content
   +header("subpage")
 
   .l-nudge.l-wrap
-    h1.t-head--high Název projektu
+    h1.t-head--higher Název projektu
     .o-bar
       .o-bar__title
         span.t-caps Pavla Nováková
@@ -18,14 +18,12 @@ block template-content
             span.t-caps Další práce studenta 
             i.o-iconlink__icon--right.ion-ios-arrow-right
 
-  .o-carousel.swiper-container(data-carousel).l-wrap.l-wrap--horizontal
+  .o-carousel.swiper-container(data-swiper).l-wrap.l-wrap--horizontal
     ul.o-carousel__list.swiper-wrapper
-      li.o-carousel__item.swiper-slide
-        img.o-carousel__image(src="assets/images/5.jpg", alt="Project Image")
-      each photoNumber in ["1", "2", "3", "4"]
-        li.o-carousel__item.swiper-slide
-          img(src="http://unsplash.it/#{photoNumber * 200}/500/?image=#{photoNumber * 20}", alt="unsplash.it")
+      each photoNumber in ["1", "2", "3"]
+        li.o-carousel__item.o-carousel__item--large.swiper-slide
+          img(src="http://unsplash.it/#{photoNumber * 300}/600/?image=#{photoNumber * 25}", alt="unsplash.it")
 
   .l-wrap.o-description
     h2.t-head--low O Projektu
-    p.t-text: +dummy(5, "sentences")
+    p.t-text: +dummy(40)

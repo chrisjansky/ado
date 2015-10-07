@@ -3,19 +3,26 @@ extends templates/_site
 block template-content
   +header("subpage")
 
-  .m-archive.l-nudge.l-wrap
-    h1.t-head--high Všechny aktuality
+  .l-nudge.l-wrap
+    h1.t-head--higher Všechny aktuality
 
+  .m-archive
     .m-archive__list
-      each article in ["1", "2", "3", "4", "5"]
-        article.o-article.o-article--archived(id="news-#{article}")
-          h4.o-article__title.t-head--low: +dummy(5)
-          a.o-article__figure(href="#")
-            img.o-article__image(src="assets/images/bota2.jpg", alt="Bota")
-          .o-article__content
-            p.p-text: +dummy(article * 2, "sentences")
+      each article, index in [1, 2, 3, 4, 5]
+        article.o-archived(id="news-#{article}")
+          h2.o-archived__title.t-head--high: +dummy(5, "words")
+          span.o-archived__date.t-smallcaps 27 02 2015
 
-    ul.o-pagination
+          .o-carousel.swiper-container(data-swiper)
+            ul.o-carousel__list.swiper-wrapper
+              each photoNumber in [1, 2, 3]
+                li.o-carousel__item.o-carousel__item--small.swiper-slide
+                  img(src="http://unsplash.it/#{(index + 1 + photoNumber) * 50}/400/?image=#{index + photoNumber * 25}", alt="unsplash.it")
+
+          .o-archived__content
+            p.p-text: +dummy(article * 15)
+
+    ul.l-wrap.o-pagination
       li.o-pagination__item.o-pagination__item--active
         span.o-pagination__number 1
       each page in ["2", "3", "4"]

@@ -4,7 +4,7 @@ block template-content
   +header("subpage")
 
   .m-profile.l-nudge.l-wrap
-    h1.t-head--high Pavla Nováková
+    h1.t-head--higher Pavla Nováková
 
   .m-works
     - var workCount = 10
@@ -20,7 +20,6 @@ block template-content
 
     .m-students__content
       ul.o-tabs(data-tabs)
-        - var groupCount, peopleGrouped
         each studentGroup in ["bca", "mga", "grad"]
 
           li.o-tabs__item.o-group(class="o-group--#{studentGroup}")
@@ -28,22 +27,10 @@ block template-content
               case studentGroup
                 when "bca"
                   | Bakaláři
-                  - groupCount = 3
-                  - peopleGrouped = true
                 when "mga"
                   | Magistři
-                  - groupCount = 2
-                  - peopleGrouped = true
                 when "grad"
                   | Absolventi
-                  - groupCount = 1
-                  - peopleGrouped = false
 
             .o-tabs__content
-              while groupCount > 0
-                if (studentGroup == "grad")
-                  include partials/_people
-                else
-                  .o-class
-                    include partials/_people
-                - groupCount--
+              include partials/_people

@@ -1,0 +1,39 @@
+extends templates/_site
+
+block template-content
+  +header("subpage")
+
+  .l-nudge.l-wrap
+    h1.t-head--higher Všechny práce
+
+    ul.o-filter
+      li.o-filter__item
+        a.t-link--secondary.t-caps(href="#") Vše
+      li.o-filter__item
+        a.t-link--secondary.t-caps(href="#") Oceněné
+      li.o-filter__item
+        a.t-link--secondary.t-caps(href="#") Spolupráce
+      li.o-filter__item
+        a.t-link--secondary.t-caps(href="#") Bakalářské
+      li.o-filter__item
+        a.t-link--secondary.t-caps(href="#") Magisterské
+      li.o-filter__item
+        a.t-link--secondary.t-caps(href="#") Klauzury
+
+    .m-works
+      .m-works__list
+        - var workCount = 30
+        while workCount > 0
+          a.o-work(href="project-detail")
+            img.o-work__image(src="http://unsplash.it/400/400/?image=#{workCount * 14 + 1}", alt="unsplash.it")
+            .o-work__info
+              h3.o-work__title.t-head--bottom Název práce
+              span.o-work__name.t-smallcaps Jméno Příjmení
+          - workCount--
+
+    ul.o-pagination
+      li.o-pagination__item.o-pagination__item--active
+        span.o-pagination__number 1
+      each page in ["2", "3", "4"]
+        li.o-pagination__item
+          a.o-pagination__link(href="#")= page

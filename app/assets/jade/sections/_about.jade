@@ -1,31 +1,32 @@
 section#about.m-about(data-section)
   .l-wrap.l-wrap--horizontal
-    h2.m-about__title.t-head--high O nás
+    h2.m-about__title.t-head--higher O nás
     p.m-about__text.t-text Studium je zaměřeno na získávání znalostí a výtvarného rozhledu v oboru, rozvinutí  tvůrčích postupů při navrhování, na úzkou spolupráci s průmyslovou výrobou a v neposlední řadě na profesionální kompletaci díla. Základní a nedílnou součástí výuky jsou tvůrčí projekty realizované pod vedením pedagoga.
-    a.o-textlink.t-link--primary(href="http://www.utb.cz/fmk/struktura/design-obuvi") Více info
+    a.o-textlink.t-link--primary(href="http://www.utb.cz/fmk/struktura/design-obuvi") Více informací
 
   .m-news.l-wrap
-    h2.m-news__title.t-head--high Aktuality
+    h2.m-news__title.t-head--higher Aktuality
 
     .m-news__list
-      article.o-article.o-article--featured
-        a(href="archive#news-1").o-article__link
-          h4.o-article__title.t-head--low Účast na veletrhu škol
-        img(src="assets/images/bota2.jpg", alt="Bota")
-        p.p-text: +dummy(1, "sentences")
-        a(href="archive#news-1").o-article__button.t-link--light.ion-more
+      article.o-featured
+        a(href="archive#section-news-1").o-featured__link
+          h4.o-featured__title.t-head--low Účast na veletrhu škol
+        img.o-featured__image(src="http://unsplash.it/330/220/?image=100", alt="unsplash.it")
+        p.p-text: +dummy(30)
+        a(href="archive#section-news-1").o-featured__button.t-link--light.ion-more
 
-      article.o-article.o-article--featured
-        a(href="archive#news-2").o-article__link
-          h4.o-article__title.t-head--low Spolupráce s firmou Intel
-        p.p-text: +dummy(2, "sentences")
-        a(href="archive#news-2").o-article__button.t-link--light.ion-more
+      article.o-featured
+        a(href="archive#section-news-2").o-featured__link
+          h4.o-featured__title.t-head--low Spolupráce s firmou Intel
+        img.o-featured__image(src="http://unsplash.it/330/220/?image=50", alt="unsplash.it")
+        p.p-text: +dummy(40)
+        a(href="archive#section-news-2").o-featured__button.t-link--light.ion-more
 
-      article.o-article.o-article--featured
-        a(href="archive#news-3").o-article__link
-          h4.o-article__title.t-head--low Další novinka
-        img(src="assets/images/bota1.jpg", alt="Bota")
-        p.p-text: +dummy(1, "sentences")
-        a(href="archive#news-3").o-article__button.t-link--light.ion-more
+      article.o-featured
+        a(href="archive#section-news-3").o-featured__link
+          h4.o-featured__title.t-head--low Další novinka
+        img.o-featured__image(src="http://unsplash.it/330/220/?image=120", alt="unsplash.it")
+        p.p-text: +dummy(20)
+        a(href="archive#section-news-3").o-featured__button.t-link--light.ion-more
 
-    a.o-textlink.t-link--primary(href="archive") Archiv
+    a.o-textlink.t-link--primary(href="archive") Všechny aktuality

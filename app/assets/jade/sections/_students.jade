@@ -1,32 +1,19 @@
 section#students.m-students(data-section)
-  h2.t-head--high Seznam studentů a absolventů
+  h2.t-head--higher Seznam studentů a absolventů
 
   .m-students__content
     ul.o-tabs(data-tabs)
-      - var groupCount, peopleGrouped
       each studentGroup in ["bca", "mga", "grad"]
 
         li.o-tabs__item.o-group(class="o-group--#{studentGroup}")
-          button.o-tabs__link.o-toggle.t-caps
+          button.o-tabs__link.o-toggle.t-link--secondary.t-caps
             case studentGroup
               when "bca"
                 | Bakaláři
-                - groupCount = 3
-                - peopleGrouped = true
               when "mga"
                 | Magistři
-                - groupCount = 2
-                - peopleGrouped = true
               when "grad"
                 | Absolventi
-                - groupCount = 1
-                - peopleGrouped = false
 
           .o-tabs__content
-            while groupCount > 0
-              if (studentGroup == "grad")
-                include ../partials/_people
-              else
-                .o-class
-                  include ../partials/_people
-              - groupCount--
+            include ../partials/_people

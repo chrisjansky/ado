@@ -1,25 +1,8 @@
-if (studentGroup == "bca")
-  span.o-people__title
-    case groupCount
-      when 3
-        | I. ročník
-      when 2
-        | II. ročník
-      when 1
-        | III. ročník
-else if (studentGroup == "mga")
-  span.o-people__title
-    case groupCount
-      when 2
-        | IV. ročník
-      when 1
-        | V. ročník
-        
 ul.o-people
   //- Get JSON object length
   - var peopleCount = people.length
-  //- Limit number of people to output to 5-10
-  - var loopLimit = Math.round((Math.random() * 5) + 5)
+  //- Limit number of people to output to 5-15
+  - var loopLimit = Math.round((Math.random() * 10) + 5)
 
   //- Iterate
   while loopLimit > 0
