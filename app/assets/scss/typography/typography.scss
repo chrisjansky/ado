@@ -1,6 +1,6 @@
 .t-head--top {
   font-family: $font__serif;
-  font-weight: $font__serif__regular;
+  font-weight: $font__serif--regular;
   font-size: em($unit--xh);
 
   line-height: $spacing--xs;
@@ -8,7 +8,7 @@
   color: $grey--700;
 }
 
-.t-head--high {
+.t-head--higher {
   font-family: $font__caps;
   font-weight: $font__caps--regular;
 
@@ -18,6 +18,11 @@
   text-transform: lowercase;
 
   color: $grey--600;
+}
+
+.t-head--high {
+  font-family: $font__serif;
+  font-weight: $font__serif--regular;
 }
 
 .t-head--low {
@@ -60,6 +65,17 @@ p {
   }
   @include state--active {
     color: $color1--700;
+  }
+}
+
+.t-link--secondary {
+  text-decoration: none;
+  
+  &, &:link, &:visited {
+    color: $grey--400;
+  }
+  @include state--active {
+    color: $color1--500;
   }
 }
 

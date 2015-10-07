@@ -124,7 +124,6 @@
 
   padding-left: 0;
 }
-
 .o-filter__item {
   display: inline-block;
 
@@ -142,15 +141,10 @@
 
   transition: color $duration--s;
 
-  @include state--active {
-    color: $color1--500;
-  }
-
   @include state--focus {
     outline: none;
   }
 }
-
 .o-toggle:after {
   @include position(absolute, 110% null null 50%);
 
@@ -163,7 +157,6 @@
   background-color: currentColor;
   transition: width $duration--b, left $duration--b;
 }
-
 .o-toggle--active {
   color: $color1--500;
 
@@ -184,8 +177,7 @@
 
   background-color: $grey--900;
 
-  margin-right: flex-gutter();
-  margin-bottom: flex-gutter();
+  @include margin(null flex-gutter() / 2 flex-gutter());
 }
 
 [data-target] {
@@ -204,7 +196,6 @@
     opacity: .5;
   }
 }
-
 .o-work__info {
   display: block;
 
@@ -227,11 +218,9 @@
     transform: translateY(0);
   }
 }
-
 .o-work__title {
   @include margin(0 null);
 }
-
 .o-work__name {
   color: rgba(white, .5);
 }
@@ -248,65 +237,38 @@
   }
 }
 
-.o-article--featured {
+.o-featured {
   @include span-columns(4);
-
-  img {
-    max-width: em(200);
-    @include margin(null auto);
-  }
 }
-
-.o-article--archived {
-  @include clearfix;
-
-  margin-top: em($ratio--l);
+.o-featured__image {
+  max-width: em(200);
+  @include margin(null auto);
 }
-
-.o-article__figure {
-  @include span-columns(2);
-
-  background-color: $grey--900;
-}
-
-.o-article__image {
-  display: block;
-
-  width: 100%;
-
-  transition: opacity $duration--s;
-
-  .o-article__figure:hover & {
-    opacity: .5;
-  }
-}
-
-.o-article__title {
-  @include shift(2);
-}
-
-.o-article__content {
-  @include span-columns(8);
-
-  @include collapse-children;
-}
-
-.o-article__link {
+.o-featured__link {
   display: block;
 
   text-decoration: none;
 }
-
-.o-article__button {
+.o-featured__button {
   font-size: em($ratio--m);
 }
 
-.o-class {
-  @include span-columns(4);
+.o-archived {
+  text-align: center;
 
-  .o-group--mga &:first-child {
-    @include shift(2);
+  & + & {
+    margin-top: em($ratio--xl);
   }
+}
+.o-archived__date {
+  display: block;
+
+  margin-bottom: em($ratio--m);
+}
+.o-archived__content {
+  max-width: em($width--xl);
+
+  @include margin(em($ratio--l) auto null);
 }
 
 .o-people {
@@ -315,20 +277,11 @@
 
   @include clearfix;
 }
-
 .o-people__item {
   margin-top: em($ratio--xxs);
 
-  .o-group--grad & {
-    @include span-columns(4);
-    @include omega(3n);
-  }
-}
-
-.o-people__title {
-  display: block;
-
-  margin-bottom: em($ratio--b);
+  @include span-columns(4 of $columns__desktop);
+  @include omega(3n);
 }
 
 .o-pagination {
@@ -396,13 +349,24 @@
   }
 }
 
+
 .o-carousel__item {
   width: auto;
-  height: em(500);
 
   & + & {
     margin-left: flex-gutter();
   }
+
+  opacity: .25;
+
+  transition: opacity $duration--b;
+}
+
+.o-carousel__item--small {
+  height: em(360);
+}
+.o-carousel__item--large {
+  height: em(500);
 }
 
 .o-carousel__image {
@@ -412,7 +376,7 @@
 .o-description {
   text-align: center;
 
-  max-width: em(900);
+  max-width: em($width--xl);
   @include margin(null auto);
 }
 

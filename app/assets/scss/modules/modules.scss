@@ -3,7 +3,7 @@
 }
 
 .m-about__text {
-  max-width: em(800);
+  max-width: em($width--xl);
 
   @include margin(null auto);
 }
@@ -11,10 +11,8 @@
 .m-news__list {
   @include clearfix;
 
-  max-width: em(1100);
+  max-width: em($width--h);
   @include margin(null auto);
-
-  // text-align: center;
 }
 
 .m-hero {
@@ -33,6 +31,7 @@
   bottom: 10%;
   left: 7.5%;
 
+  // Good ol' magic number.
   max-width: em(850, $unit--xh);
 }
 
@@ -101,7 +100,7 @@
 }
 
 .m-students__content {
-  max-width: em(800);
+  max-width: em($width--xl);
   @include margin(null auto);
 }
 
@@ -121,7 +120,7 @@
   padding-bottom: 0;
 }
 
-.m-archive__list {
-  max-width: em(1100);
-  @include margin(null auto);
-}
+// .m-archive__list {
+//   max-width: em(1100);
+//   @include margin(null auto);
+// }
