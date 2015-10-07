@@ -12,6 +12,8 @@
     "jadeGlob": "app/assets/jade/**/*.jade",
     "jadeIgnore": "!app/assets/jade/**/_*.jade",
 
+    "wpGlob": "vagrant_wp/wordpress/wp-content/themes/ado/**/*.php",
+
     "scssRoot": "app/assets/scss/",
     "scssBase": "app/assets/scss/*.scss",
     "scssGlob": "app/assets/scss/**/*.scss",

@@ -12,6 +12,9 @@ gulp.task("default", ["server", "watch"]);
 require("./bower_components/chj-framework/gulp/tasks/guide.js");
 require("./bower_components/chj-framework/gulp/tasks/svg.js");
 
+/* Optional */
+require("./gulp/tasks/wordpress.js");
+
 /* Production */
 require("./bower_components/chj-framework/gulp/tasks/build.js");
 require("./bower_components/chj-framework/gulp/tasks/deploy.js");
