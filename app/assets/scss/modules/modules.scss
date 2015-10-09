@@ -8,6 +8,9 @@
   @include margin(null auto);
 }
 
+.m-news {
+  text-align: center;
+}
 .m-news__list {
   @include clearfix;
 
@@ -28,7 +31,7 @@
 
 .m-hero__head {
   position: absolute;
-  bottom: 10%;
+  bottom: 20%;
   left: 7.5%;
 
   // Good ol' magic number.
@@ -119,8 +122,3 @@
 .m-profile {
   padding-bottom: 0;
 }
-
-// .m-archive__list {
-//   max-width: em(1100);
-//   @include margin(null auto);
-// }

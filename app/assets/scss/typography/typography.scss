@@ -12,7 +12,7 @@
   font-family: $font__caps;
   font-weight: $font__caps--regular;
 
-  font-size: em($ratio--m);
+  font-size: em($unit--xl);
   letter-spacing: em($ratio--t);
   text-align: center;
   text-transform: lowercase;
@@ -21,6 +21,8 @@
 }
 
 .t-head--high {
+  font-size: em($unit--l);
+  
   font-family: $font__serif;
   font-weight: $font__serif--regular;
 }

@@ -241,13 +241,45 @@
   @include span-columns(4);
 }
 .o-featured__image {
-  max-width: em(200);
   @include margin(null auto);
+
+  transition: opacity $duration--s;
+}
+.o-featured__thumbnail {
+  display: block;
+
+  position: relative;
+
+  background-color: $grey--900;
+
+  margin-bottom: em($ratio--m);
+
+  @include state--active {
+    .o-featured__image {
+      opacity: .75;
+    }
+    .o-featured__overlay {
+      opacity: 1;
+    }
+  }
+}
+.o-featured__overlay {
+  @include position(absolute, 50% 0 null 0);
+
+  transform: translateY(-50%);
+
+  color: white;
+
+  opacity: 0;
+  transition: opacity $duration--s;
 }
 .o-featured__link {
   display: block;
 
   text-decoration: none;
+}
+.o-featured__text {
+  text-align: left;
 }
 .o-featured__button {
   font-size: em($ratio--m);

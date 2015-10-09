@@ -1,5 +1,5 @@
-section#about.m-about(data-section)
-  .l-wrap.l-wrap--horizontal
+section#about(data-section)
+  .m-about.l-wrap.l-wrap--horizontal
     h2.m-about__title.t-head--higher O nás
     p.m-about__text.t-text Studium je zaměřeno na získávání znalostí a výtvarného rozhledu v oboru, rozvinutí  tvůrčích postupů při navrhování, na úzkou spolupráci s průmyslovou výrobou a v neposlední řadě na profesionální kompletaci díla. Základní a nedílnou součástí výuky jsou tvůrčí projekty realizované pod vedením pedagoga.
     a.o-textlink.t-link--primary(href="http://www.utb.cz/fmk/struktura/design-obuvi") Více informací
@@ -9,24 +9,30 @@ section#about.m-about(data-section)
 
     .m-news__list
       article.o-featured
-        a(href="archive#section-news-1").o-featured__link
-          h4.o-featured__title.t-head--low Účast na veletrhu škol
-        img.o-featured__image(src="http://unsplash.it/330/220/?image=100", alt="unsplash.it")
-        p.p-text: +dummy(30)
+        a.o-featured__link(href="archive#section-news-1")
+          h4.o-featured__title.t-head--high Účast na veletrhu škol
+        a.o-featured__thumbnail(href="archive#section-news-1")
+          img.o-featured__image(src="http://unsplash.it/600/400/?image=100", alt="unsplash.it")
+          span.o-featured__overlay A
+        p.o-featured__text.p-text: +dummy(30)
         a(href="archive#section-news-1").o-featured__button.t-link--light.ion-more
 
       article.o-featured
-        a(href="archive#section-news-2").o-featured__link
-          h4.o-featured__title.t-head--low Spolupráce s firmou Intel
-        img.o-featured__image(src="http://unsplash.it/330/220/?image=50", alt="unsplash.it")
-        p.p-text: +dummy(40)
+        a.o-featured__link(href="archive#section-news-2")
+          h4.o-featured__title.t-head--high Spolupráce s firmou Intel
+        a.o-featured__thumbnail(href="archive#section-news-2")
+          img.o-featured__image(src="http://unsplash.it/600/400/?image=50", alt="unsplash.it")
+          span.o-featured__overlay A
+        p.o-featured__text.p-text: +dummy(40)
         a(href="archive#section-news-2").o-featured__button.t-link--light.ion-more
 
       article.o-featured
-        a(href="archive#section-news-3").o-featured__link
-          h4.o-featured__title.t-head--low Další novinka
-        img.o-featured__image(src="http://unsplash.it/330/220/?image=120", alt="unsplash.it")
-        p.p-text: +dummy(20)
+        a.o-featured__link(href="archive#section-news-3")
+          h4.o-featured__title.t-head--high Další novinka
+        a.o-featured__thumbnail(href="archive#section-news-3")
+          img.o-featured__image(src="http://unsplash.it/600/400/?image=120", alt="unsplash.it")
+          span.o-featured__overlay A
+        p.o-featured__text.p-text: +dummy(20)
         a(href="archive#section-news-3").o-featured__button.t-link--light.ion-more
 
-    a.o-textlink.t-link--primary(href="archive") Všechny aktuality
+    a.m-news__textlink.o-textlink.t-link--primary(href="archive") Všechny aktuality
