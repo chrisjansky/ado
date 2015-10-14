@@ -24,6 +24,10 @@ block template-content
         li.o-carousel__item.o-carousel__item--large.swiper-slide
           img(src="http://unsplash.it/#{photoNumber * 300}/600/?image=#{photoNumber * 25}", alt="unsplash.it")
 
+  mark.o-error
+    span.o-error__icon.ion-alert
+    span.o-error__text K této práci nebyly nahrány žádné fotky.
+
   .l-wrap.o-description
     h2.t-head--low O Projektu
     p.t-text: +dummy(40)
