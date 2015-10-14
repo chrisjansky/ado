@@ -1,0 +1,7 @@
+a.page-numbers {
+  @extend .o-pagination__link;
+}
+
+.page-numbers.current { 
+  @extend .o-pagination__number;
+}
