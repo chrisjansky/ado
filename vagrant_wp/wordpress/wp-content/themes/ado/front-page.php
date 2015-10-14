@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<section style="background-image: url('<?php echo get_template_directory_uri() ?>/library/images/kabelka.jpg');" class="m-hero">
+<section style="background-image: url('<?php echo get_template_directory_uri() ?>/library/images/bg_top.jpg');" class="m-hero">
   <h1 class="t-head--top m-hero__head">
     <?php echo simple_fields_value("sfg_homepage_title"); ?>
   </h1>
