@@ -1,0 +1,19 @@
+.vagrant
+.ey_local_data
+.DS_Store
+latest.tar.gz
+
+## Custom
+/*
+!wordpress/
+
+!.gitignore
+
+wordpress/*
+!wordpress/wp-content/
+
+wordpress/wp-content/*
+!wordpress/wp-content/themes/
+
+wordpress/wp-content/themes/*
+!wordpress/wp-content/themes/ado/
