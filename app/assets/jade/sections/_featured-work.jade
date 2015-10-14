@@ -20,7 +20,7 @@ section#gallery.m-gallery(data-section, data-mixitup)
       .m-works__list
         - var workCount = 16
         while workCount > 0
-          - var random = Math.floor((Math.random() * 5) + 1)
+          - var random = Math.floor((Math.random() * 50))
           - var tags
           case random
             when 1
@@ -33,7 +33,7 @@ section#gallery.m-gallery(data-section, data-mixitup)
               - tags = "master collab"
 
           a.o-work(href="project-detail", class=tags, data-target)
-            img.o-work__image(src="assets/images/gallery/#{workCount}.jpg", alt="Image")
+            img.o-work__image(src="http://unsplash.it/600/600/?image=#{random * 2}", alt="unsplash.it")
             .o-work__info
               h3.o-work__title.t-head--bottom Název práce
               span.o-work__name.t-smallcaps Jméno Příjmení
