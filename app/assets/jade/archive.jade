@@ -22,9 +22,10 @@ block template-content
           .o-archived__content
             p.p-text: +dummy(article * 15)
 
-    ul.l-wrap.o-pagination
-      li.o-pagination__item.o-pagination__item--active
-        span.o-pagination__number 1
-      each page in ["2", "3", "4"]
-        li.o-pagination__item
-          a.o-pagination__link(href="#")= page
+    .l-wrap
+      ul.o-pagination
+        li.o-pagination__item.o-pagination__item--active
+          span.o-pagination__number 1
+        each page in ["2", "3", "4"]
+          li.o-pagination__item
+            a.o-pagination__link(href="#")= page
