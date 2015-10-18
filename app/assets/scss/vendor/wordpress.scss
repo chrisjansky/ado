@@ -5,3 +5,31 @@ a.page-numbers {
 .page-numbers.current { 
   @extend .o-pagination__number;
 }
+
+// TinyMCE is stupid.
+.m-contact__item {
+  p {
+    font-size: em(14);
+  }
+  p:first-child {
+    display: none;
+  }
+
+  h4 {
+    @extend .t-head--low;
+  }
+}
+
+// qTranslate X
+.qtranxs_language_chooser {
+  @include reset-list;
+}
+.language-chooser-item {
+  display: inline-block;
+
+  &.active {
+    position: relative;
+
+    @include underlineActive;
+  }
+}
