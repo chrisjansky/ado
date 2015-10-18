@@ -49,12 +49,7 @@
           <li class="o-nav__item"><a href="<?php echo home_url() ?>#contact" data-scrollto data-nav-link class="o-nav__link"><?php _e("Contact", "ado") ?></a></li>
 
           <li class="o-nav__item">
-            <?php $languages = pll_the_languages(array("raw" => 1));
-              foreach ($languages as $lang):
-                $lang_class = $lang['current_lang'] ? "o-nav__link--active" : null;
-            ?>
-              <a hreflang="<?php echo $lang['slug'] ?>" href="<?php echo $lang['url'] ?>" class="o-nav__link <?php echo $lang_class ?>"><?php echo $lang['slug'] ?></a>
-            <?php endforeach; ?>
+            <?php echo qtranxf_generateLanguageSelectCode(array("type"=>"custom", "format" => "%c")); ?>
           </li>
         </ul>
       </nav>
