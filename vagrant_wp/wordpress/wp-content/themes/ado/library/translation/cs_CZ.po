@@ -1,0 +1,159 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ADO\n"
+"POT-Creation-Date: 2015-10-18 22:39+0100\n"
+"PO-Revision-Date: 2015-10-18 22:39+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.7\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ../..\n"
+
+#: ../../archive-project.php:4 ../../single-project.php:32
+msgid "All Projects"
+msgstr "Všechny projekty"
+
+#: ../../archive-project.php:8 ../../front-page.php:16
+#: ../../taxonomy-type.php:13
+msgid "All"
+msgstr "Vše"
+
+#: ../../archive.php:8
+msgid "News Archive"
+msgstr "Všechny aktuality"
+
+#: ../../front-page.php:13
+msgid "Selected Projects"
+msgstr "Vybrané projekty"
+
+#: ../../front-page.php:19
+msgid "Awarded"
+msgstr "Oceněné"
+
+#: ../../front-page.php:22
+msgid "Collaborations"
+msgstr "Spolupráce"
+
+#: ../../front-page.php:25
+msgid "Bachelor’s"
+msgstr "Bakalářské"
+
+#: ../../front-page.php:28
+msgid "Master’s"
+msgstr "Magisterské"
+
+#: ../../front-page.php:31
+msgid "Finals"
+msgstr "Klauzurní"
+
+#: ../../front-page.php:87
+msgid "More Projects"
+msgstr "Další projekty"
+
+#: ../../front-page.php:94
+msgid "About Us"
+msgstr "O nás"
+
+#: ../../front-page.php:96
+msgid "More Info"
+msgstr "Více informací"
+
+#: ../../front-page.php:99
+msgid "News"
+msgstr "Aktuality"
+
+#: ../../front-page.php:131
+msgid "Archive"
+msgstr "Archiv"
+
+#: ../../front-page.php:135 ../../taxonomy.php:26
+msgid "Students & Graduates"
+msgstr "Studenti a absolventi"
+
+#: ../../front-page.php:189 ../../header.php:49
+msgid "Contact"
+msgstr "Kontakty"
+
+#: ../../header.php:42
+msgid "TBU"
+msgstr "UTB"
+
+#: ../../header.php:42
+msgid "FMC"
+msgstr "FMK"
+
+#: ../../header.php:42
+msgid "Shoe Design Studio"
+msgstr "Ateliér Design Obuvi"
+
+#: ../../header.php:46
+msgid "Projects"
+msgstr "Projekty"
+
+#: ../../header.php:47
+msgid "About"
+msgstr "O nás"
+
+#: ../../header.php:48
+msgid "Students"
+msgstr "Studenti"
+
+#: ../../single-project.php:40
+msgid "More from this Student"
+msgstr "Práce studenta"
+
+#: ../../single-project.php:61
+msgid "No Photos Found."
+msgstr "Nebyly nalezeny žádné fotky."
+
+#: ../../single-project.php:66
+msgid "About This Project"
+msgstr "O projektu"
+
+#: ../../taxonomy-type.php:6
+#, php-format
+msgid "%s Projects"
+msgstr "Kategorie: %s"
+
+#~ msgid " Projects"
+#~ msgstr " Projekty"
+
+#~ msgid "Bachelors"
+#~ msgstr "Bakaláři"
+
+#~ msgid "Masters"
+#~ msgstr "Magistři"
+
+#~ msgid "Graduates"
+#~ msgstr "Absolventi"
+
+#~ msgid "Add New Bachelor"
+#~ msgstr "Přidat bakaláře"
+
+#~ msgid "Add New Master"
+#~ msgstr "Přidat magistra"
+
+#~ msgid "Add New Graduate"
+#~ msgstr "Přidat absolventa"
+
+#~ msgid "Project Type"
+#~ msgstr "Typ projektu"
+
+#~ msgid "Project Types"
+#~ msgstr "Typy projektů"
+
+#~ msgid "Add New Type"
+#~ msgstr "Přidat nový typ"
+
+#~ msgid "Bachelor&rsquo;s"
+#~ msgstr "Bakalářské"
+
+#~ msgid "Vybrané práce"
+#~ msgstr "Selected Projects"
