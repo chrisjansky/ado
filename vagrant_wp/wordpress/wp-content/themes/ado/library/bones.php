@@ -75,7 +75,7 @@ function rw_title( $title, $sep, $seplocation ) {
 
   // Add a page number if necessary:
   if ( $paged >= 2 || $page >= 2 ) {
-    $title .= " {$sep} " . sprintf( __( 'Page %s', 'dbt' ), max( $paged, $page ) );
+    $title .= " {$sep} " . sprintf('Page', max( $paged, $page ) );
   }
 
   return $title;
@@ -179,17 +179,6 @@ function bones_theme_support() {
 
 	// to add header image support go here: http://themble.com/support/adding-header-background-image-support/
 
-	// wp menus
-	add_theme_support( 'menus' );
-
-	// registering wp3+ menus
-	register_nav_menus(
-		array(
-			'main-nav' => __( 'The Main Menu', 'bonestheme' ),   // main nav in header
-			'footer-links' => __( 'Footer Links', 'bonestheme' ) // secondary nav in footer
-		)
-	);
-
 	// Enable support for HTML5 markup.
 	add_theme_support( 'html5', array(
 		'comment-list',
@@ -198,38 +187,6 @@ function bones_theme_support() {
 	) );
 
 } /* end bones theme support */
-
-
-/*********************
-RELATED POSTS FUNCTION
-*********************/
-
-// Related Posts Function (call using bones_related_posts(); )
-function bones_related_posts() {
-	echo '<ul id="bones-related-posts">';
-	global $post;
-	$tags = wp_get_post_tags( $post->ID );
-	if($tags) {
-		foreach( $tags as $tag ) {
-			$tag_arr .= $tag->slug . ',';
-		}
-		$args = array(
-			'tag' => $tag_arr,
-			'numberposts' => 5, /* you can change this to show more */
-			'post__not_in' => array($post->ID)
-		);
-		$related_posts = get_posts( $args );
-		if($related_posts) {
-			foreach ( $related_posts as $post ) : setup_postdata( $post ); ?>
-				<li class="related_post"><a class="entry-unrelated" href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></li>
-			<?php endforeach; }
-		else { ?>
-			<?php echo '<li class="no_related_post">' . __( 'No Related Posts Yet!', 'bonestheme' ) . '</li>'; ?>
-		<?php }
-	}
-	wp_reset_postdata();
-	echo '</ul>';
-} /* end bones related posts function */
 
 /*********************
 PAGE NAVI
