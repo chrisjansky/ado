@@ -39,15 +39,23 @@
 
 <header id="js-header" class="o-header l-wrap l-wrap--small">
   <div class="l-inline">
-    <div class="l-inline__cell"><a href="<?php echo home_url() ?>" class="o-logo">UTB/FMK/<span class="o-logo__studio">Ateliér Design obuvi</span></a></div>
+    <div class="l-inline__cell"><a href="<?php echo home_url() ?>" class="o-logo"><?php _e("TBU", "ado") ?>/<?php _e("FMC", "ado") ?>/<span class="o-logo__studio"><?php _e("Shoe Design Studio", "ado") ?></span></a></div>
     <div class="l-inline__cell">
       <nav class="o-nav">
         <ul class="o-nav__list">
-          <li class="o-nav__item"><a href="<?php echo home_url() ?>#gallery" data-scrollto data-nav-link class="o-nav__link">Práce</a></li>
-          <li class="o-nav__item"><a href="<?php echo home_url() ?>#about" data-scrollto data-nav-link class="o-nav__link">O nás</a></li>
-          <li class="o-nav__item"><a href="<?php echo home_url() ?>#students" data-scrollto data-nav-link class="o-nav__link">Seznam studentů</a></li>
-          <li class="o-nav__item"><a href="<?php echo home_url() ?>#contact" data-scrollto data-nav-link class="o-nav__link">Kontakty</a></li>
-          <li class="o-nav__item"><a href="#" class="o-nav__link o-nav__link--active">CZ</a><span class="o-nav__divider">/</span><a href="#" class="o-nav__link">EN</a></li>
+          <li class="o-nav__item"><a href="<?php echo home_url() ?>#gallery" data-scrollto data-nav-link class="o-nav__link"><?php _e("Projects", "ado") ?></a></li>
+          <li class="o-nav__item"><a href="<?php echo home_url() ?>#about" data-scrollto data-nav-link class="o-nav__link"><?php _e("About", "ado") ?></a></li>
+          <li class="o-nav__item"><a href="<?php echo home_url() ?>#students" data-scrollto data-nav-link class="o-nav__link"><?php _e("Students", "ado") ?></a></li>
+          <li class="o-nav__item"><a href="<?php echo home_url() ?>#contact" data-scrollto data-nav-link class="o-nav__link"><?php _e("Contact", "ado") ?></a></li>
+
+          <li class="o-nav__item">
+            <?php $languages = pll_the_languages(array("raw" => 1));
+              foreach ($languages as $lang):
+                $lang_class = $lang['current_lang'] ? "o-nav__link--active" : null;
+            ?>
+              <a hreflang="<?php echo $lang['slug'] ?>" href="<?php echo $lang['url'] ?>" class="o-nav__link <?php echo $lang_class ?>"><?php echo $lang['slug'] ?></a>
+            <?php endforeach; ?>
+          </li>
         </ul>
       </nav>
     </div>
