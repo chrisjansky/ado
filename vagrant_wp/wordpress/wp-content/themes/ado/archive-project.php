@@ -1,20 +1,20 @@
 <?php get_header(); ?>
 
 <div class="l-nudge l-wrap">
-  <h1 class="t-head--higher">Všechny práce</h1>
+  <h1 class="t-head--higher"><?php _e("All Projects", "ado") ?></h1>
 
   <ul class="o-filter">
     <li class="o-filter__item">
-      <a href="<?php echo get_post_type_archive_link("project") ?>" class="o-filter__link--active t-link--secondary t-caps">Vše</a>
+      <a href="<?php echo get_post_type_archive_link("project") ?>" class="o-filter__link--active t-link--secondary t-caps"><?php _e("All", "ado") ?></a>
     </li>
 
     <?php
-      $project_terms = get_terms("type", array("hide_empty" => false));
+      $project_terms = get_terms("type", array("orderby" => "id", "hide_empty" => false));
 
       foreach ($project_terms as $term):
     ?>
       <li class="o-filter__item">
-        <a href="<?php echo get_term_link($term) ?>" class="t-link--secondary t-caps"><?php echo $term->name; ?></a>
+        <a href="<?php echo get_term_link($term) ?>" class="t-link--secondary t-caps"><?php _e($term->name, "ado") ?></a>
       </li>
     <?php endforeach; ?>
 
@@ -58,8 +58,8 @@
       <?php
         $project_pagination = paginate_links(array(
           "type" => "array",
-          "prev_text" => __("&larr;"),
-          "next_text" => __("&rarr;")
+          "prev_text" => "&larr;",
+          "next_text" => "&rarr;"
         ));
 
         if ($project_pagination):

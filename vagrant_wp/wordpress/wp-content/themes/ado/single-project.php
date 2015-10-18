@@ -7,7 +7,7 @@
     <div class="o-bar__title">
       <span class="t-caps">
         <?php
-          $post_taxonomies = array ('bachelor', 'master', 'graduate');
+          $post_taxonomies = array ("bachelor", "master", "graduate");
           // wp_get_post_terms for array of taxonomies, get_the_terms for just one
           $post_terms = wp_get_post_terms($post->ID, $post_taxonomies);
 
@@ -29,7 +29,7 @@
       <div class="l-inline__cell">
         <a href="<?php echo get_post_type_archive_link("project") ?>" class="o-iconlink">
           <i class="o-iconlink__icon--left ion-ios-arrow-left"></i>
-          <span class="t-caps"> Přehled prací</span>
+          <span class="t-caps"> <?php _e("All Projects", "") ?></span>
         </a>
       </div>
       <div class="l-inline__cell">
@@ -37,7 +37,7 @@
           $term_link = get_term_link($post_terms[0]);
         ?>
         <a href="<?php echo esc_url($term_link) ?>" class="o-iconlink">
-          <span class="t-caps">Další práce studenta </span>
+          <span class="t-caps"><?php _e("More from this Student", "ado") ?> </span>
           <i class="o-iconlink__icon--right ion-ios-arrow-right"></i>
         </a>
       </div>
@@ -58,13 +58,13 @@
     </ul>
   </div>
 <?php else: ?>
-  <mark class="o-error"><span class="o-error__icon ion-alert"></span><span class="o-error__text">K této práci nebyly nahrány žádné fotky.</span></mark>
+  <mark class="o-error"><span class="o-error__icon ion-alert"></span><span class="o-error__text"><?php _e("No Photos Found.", "ado") ?></span></mark>
 <?php endif; ?>
 
 <?php if (get_the_content()): ?>
   <div class="l-wrap o-description">
-    <h2 class="t-head--low">O Projektu</h2>
-    <p class="t-text"><?php the_content(); ?></p>
+    <h2 class="t-head--low"><?php _e("About This Project", "ado") ?></h2>
+    <p class="t-paragraph"><?php the_content(); ?></p>
   </div>
 <?php endif; ?>
 

@@ -82,8 +82,8 @@ function ado_create_posttypes() {
   // CPT Options
     array(
       'labels' => array(
-        'name' => __( 'Projects' ),
-        'singular_name' => __( 'project' )
+        'name' => 'Projects',
+        'singular_name' => 'project'
       ),
       'public' => true,
       'has_archive' => true,
@@ -98,9 +98,9 @@ function ado_create_posttypes() {
 function ado_create_taxonomies() {
   register_taxonomy('bachelor', 'project', array(
     'labels' => array(
-        'name' => __('Bachelor’s'),
-        'menu_name' => __('Bachelor’s'),
-        'add_new_item' => __('Add New Bachelor')
+        'name' => 'Bachelor’s',
+        'menu_name' => 'Bachelor’s',
+        'add_new_item' => 'Add New Bachelor'
       ),
     'hierarchical' => true,
     'show_admin_column' => true,
@@ -108,9 +108,9 @@ function ado_create_taxonomies() {
   ));
   register_taxonomy('master', 'project', array(
     'labels' => array(
-        'name' => __('Master’s'),
-        'menu_name' => __('Master’s'),
-        'add_new_item' => __('Add New Master')
+        'name' => 'Master’s',
+        'menu_name' => 'Master’s',
+        'add_new_item' => 'Add New Master'
       ),
     'hierarchical' => true,
     'show_admin_column' => true,
@@ -118,9 +118,9 @@ function ado_create_taxonomies() {
   ));
   register_taxonomy('graduate', 'project', array(
     'labels' => array(
-        'name' => __('Graduates'),
-        'menu_name' => __('Graduates'),
-        'add_new_item' => __('Add New Graduate')
+        'name' => 'Graduates',
+        'menu_name' => 'Graduates',
+        'add_new_item' => 'Add New Graduate'
       ),
     'hierarchical' => true,
     'show_admin_column' => true,
@@ -128,9 +128,9 @@ function ado_create_taxonomies() {
   ));
   register_taxonomy('type', 'project', array(
     'labels' => array(
-        'name' => __('Project Type'),
-        'menu_name' => __('Project Types'),
-        'add_new_item' => __('Add New Type')
+        'name' => 'Project Type',
+        'menu_name' => 'Project Types',
+        'add_new_item' => 'Add New Type'
       ),
     'hierarchical' => true,
     'show_admin_column' => true,

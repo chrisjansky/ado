@@ -5,7 +5,7 @@ Template Name: Archive
 get_header(); ?>
 
 <div class="l-nudge l-wrap">
-  <h1 class="t-head--higher">Všechny aktuality</h1>
+  <h1 class="t-head--higher"><?php _e("News Archive", "ado") ?></h1>
 </div>
 
 <div class="m-archive">
@@ -40,7 +40,7 @@ get_header(); ?>
         <?php endif; ?>
 
         <div class="o-archived__content">
-          <p class="p-text"><?php the_content() ?></p>
+          <p class="t-paragraph"><?php the_content() ?></p>
         </div>
       </article>
     <?php endwhile; ?>
@@ -51,8 +51,8 @@ get_header(); ?>
       <?php
         $project_pagination = paginate_links(array(
           "type" => "array",
-          "prev_text" => __("&larr;"),
-          "next_text" => __("&rarr;")
+          "prev_text" => "&larr;",
+          "next_text" => "&rarr;"
         ));
 
         if ($project_pagination):

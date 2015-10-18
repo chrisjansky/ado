@@ -7,27 +7,28 @@
   </h1>
   <a href="#gallery" data-scrollto class="m-hero__arrow link-arrow ion-ios-arrow-down"></a>
 </section>
+
 <section id="gallery" data-section data-mixitup class="m-gallery">
   <div class="l-wrap">
-    <h2 class="t-head--higher">Vybrané práce</h2>
+    <h2 class="t-head--higher"><?php _e("Selected Projects", "ado") ?></h2>
     <ul class="o-filter">
       <li class="o-filter__item">
-        <button data-filter="all" class="o-toggle t-caps">Vše</button>
+        <button data-filter="all" class="o-toggle t-caps"><?php _e("All", "ado") ?></button>
       </li>
       <li class="o-filter__item">
-        <button data-filter=".awarded" class="o-toggle t-caps">Oceněné</button>
+        <button data-filter=".awarded" class="o-toggle t-caps"><?php _e("Awarded", "ado") ?></button>
       </li>
       <li class="o-filter__item">
-        <button data-filter=".collaboration" class="o-toggle t-caps">Spolupráce</button>
+        <button data-filter=".collaboration" class="o-toggle t-caps"><?php _e("Collaborations", "ado") ?></button>
       </li>
       <li class="o-filter__item">
-        <button data-filter=".bachelor" class="o-toggle t-caps">Bakalářské</button>
+        <button data-filter=".bachelor" class="o-toggle t-caps"><?php _e("Bachelor’s", "ado") ?></button>
       </li>
       <li class="o-filter__item">
-        <button data-filter=".master" class="o-toggle t-caps">Magisterské</button>
+        <button data-filter=".master" class="o-toggle t-caps"><?php _e("Master’s", "ado") ?></button>
       </li>
       <li class="o-filter__item">
-        <button data-filter=".finals" class="o-toggle t-caps">Klauzury</button>
+        <button data-filter=".finals" class="o-toggle t-caps"><?php _e("Finals", "ado") ?></button>
       </li>
     </ul>
     <div class="m-works">
@@ -83,19 +84,19 @@
         <?php endforeach; wp_reset_postdata(); ?>
 
       </div>
-      <a id="js-workbutton" href="<?php echo get_post_type_archive_link("project") ?>" class="m-works__link o-textlink t-link--primary">Další práce</a>
+      <a id="js-workbutton" href="<?php echo get_post_type_archive_link("project") ?>" class="m-works__link o-textlink t-link--primary"><?php _e("More Projects", "ado") ?></a>
     </div>
   </div>
 </section>
 
 <section id="about" data-section class="m-about">
   <div class="l-wrap l-wrap--horizontal">
-    <h2 class="m-about__title t-head--higher">O nás</h2>
-    <p class="m-about__text t-text"><?php the_content(); ?></p>
-    <a href="http://www.utb.cz/fmk/struktura/design-obuvi" class="o-textlink t-link--primary">Více info</a>
+    <h2 class="m-about__title t-head--higher"><?php _e("About Us", "ado") ?></h2>
+    <p class="m-about__text t-paragraph"><?php the_content(); ?></p>
+    <a href="http://www.utb.cz/fmk/struktura/design-obuvi" class="o-textlink t-link--primary"><?php _e("More Info", "ado") ?></a>
   </div>
   <div class="m-news l-wrap">
-    <h2 class="m-news__title t-head--higher">Aktuality</h2>
+    <h2 class="m-news__title t-head--higher"><?php _e("News", "ado") ?></h2>
     <div class="m-news__list">
 
       <?php
@@ -120,18 +121,18 @@
               <span class="o-featured__overlay ion-chevron-right"></span>
             </a>
           <?php endif; ?>
-          <p class="o-featured__text p-text"><?php the_excerpt() ?></p>
+          <p class="o-featured__text t-paragraph"><?php the_excerpt() ?></p>
           <a href="<?php echo $post_link ?>" class="o-featured__button t-link--light ion-more"></a>
         </article>
 
       <?php endforeach; wp_reset_postdata(); ?>
 
     </div>
-    <a href="<?php echo $archive_link ?>" class="o-textlink t-link--primary">Archiv</a>
+    <a href="<?php echo $archive_link ?>" class="o-textlink t-link--primary"><?php _e("Archive", "ado") ?></a>
   </div>
 </section>
 <section id="students" data-section class="m-students">
-  <h2 class="t-head--higher">Seznam studentů a absolventů</h2>
+  <h2 class="t-head--higher"><?php _e("Students & Graduates", "ado") ?></h2>
   <div class="m-students__content">
     <ul data-tabs class="o-tabs">
       <?php
@@ -146,21 +147,21 @@
             switch ($group_taxonomy) {
               case "bachelor":
                 $group_slug = "bca";
-                $group_title = "Bakaláři";
+                $group_title = "Bachelors";
                 break;
               case "master":
                 $group_slug = "mga";
-                $group_title = "Magistři";
+                $group_title = "Masters";
                 break;
               case "graduate":
                 $group_slug = "grad";
-                $group_title = "Absolventi";
+                $group_title = "Graduates";
                 break;
             } ?>
 
             <li class="o-tabs__item o-group o-group--<?php echo $group_slug ?>">
               <button class="o-tabs__link o-toggle t-link--secondary t-caps">
-                <?php echo $group_title ?>
+                <?php _e($group_title, "ado") ?>
               </button>
               <div class="o-tabs__content">
                 <ul class="o-people">
@@ -185,7 +186,7 @@
 </section>
 <section id="contact" data-section class="m-contact">
   <div class="l-wrap">
-    <h2 class="m-contact__title t-head--higher">Kontakty</h2>
+    <h2 class="m-contact__title t-head--higher"><?php _e("Contact", "ado") ?></h2>
     <div class="m-contact__list">
       <div class="m-contact__item">
         <?php echo simple_fields_value("sfg_homepage_contact1"); ?>

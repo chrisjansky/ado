@@ -3,7 +3,7 @@
 
 <div class="l-nudge l-wrap">
   <mark><?php the_title() ?></mark>
-  <p><?php the_content() ?></p>
+  <p class="t-paragraph"><?php the_content() ?></p>
 </div>
 
 <?php endwhile; endif; ?>

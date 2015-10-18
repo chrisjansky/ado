@@ -23,13 +23,13 @@
 </div>
 
 <section id="students" data-section class="m-students">
-  <h2 class="t-head--high">Studenti a absolventi</h2>
+  <h2 class="t-head--high"><?php _e("Students & Graduates", "ado") ?></h2>
   <div class="m-students__content">
     <ul data-tabs class="o-tabs">
       <?php
-        $args = array('hide_empty' => false);
+        $args = array("hide_empty" => false);
 
-        $group_taxonomies = array('bachelor', 'master', 'graduate');
+        $group_taxonomies = array("bachelor", "master", "graduate");
 
         foreach ($group_taxonomies as $key=>$group_taxonomy):
 
@@ -40,21 +40,21 @@
             switch ($group_taxonomy) {
               case "bachelor":
                 $group_slug = "bca";
-                $group_title = "Bakaláři";
+                $group_title = "Bachelors";
                 break;
               case "master":
                 $group_slug = "mga";
-                $group_title = "Magistři";
+                $group_title = "Masters";
                 break;
               case "graduate":
                 $group_slug = "grad";
-                $group_title = "Absolventi";
+                $group_title = "Graduates";
                 break;
             } ?>
 
             <li class="o-tabs__item o-group o-group--<?php echo $group_slug ?>">
               <button class="o-tabs__link o-toggle t-link--secondary t-caps">
-                <?php echo $group_title ?>
+                <?php _e($group_title, "ado") ?>
               </button>
               <div class="o-tabs__content">
                 <ul class="o-people">

@@ -1,12 +1,16 @@
 <?php get_header(); ?>
 
 <div class="m-profile l-nudge l-wrap">
-  <h1 class="t-head--higher"><?php single_term_title() ?> Projects</h1>
+  <h1 class="t-head--higher">
+    <?php
+      printf(__("%s Projects", "ado"), single_term_title("", false));
+    ?>
+  </h1>
 </div>
 
 <ul class="o-filter">
   <li class="o-filter__item">
-    <a href="<?php echo get_post_type_archive_link("project") ?>" class="t-link--secondary t-caps">Vše</a>
+    <a href="<?php echo get_post_type_archive_link("project") ?>" class="t-link--secondary t-caps"><?php _e("All", "ado") ?></a>
   </li>
 
   <?php
@@ -66,8 +70,8 @@
     <?php
       $project_pagination = paginate_links(array(
         "type" => "array",
-        "prev_text" => __("&larr;"),
-        "next_text" => __("&rarr;")
+        "prev_text" => "&larr;",
+        "next_text" => "&rarr;"
       ));
 
       if ($project_pagination):
