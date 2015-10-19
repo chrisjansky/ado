@@ -142,9 +142,9 @@ function cleanse_rewrite() {
 }
 
 // Hooking up our function to theme setup
-add_action( 'init', 'ado_create_posttypes' );
-add_action( 'init', 'ado_create_taxonomies' );
-add_action( 'init', 'cleanse_rewrite' );
+add_action('init', 'ado_create_posttypes');
+add_action('init', 'ado_create_taxonomies');
+add_action('init', 'cleanse_rewrite');
 
 function ado_fonts() {
   wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Playfair+Display:400|Playfair+Display+SC:400,700|Open+Sans:400,600');
@@ -167,5 +167,9 @@ function ado_sf_connect($connector, $post) {
   return $connector;
 }
 add_filter("simple_fields_get_selected_connector_for_post", "ado_sf_connect", 10, 2);
+
+// Get rid of Emoji fluff.
+remove_action("wp_head", "print_emoji_detection_script", 7);
+remove_action("wp_print_styles", "print_emoji_styles" );
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
