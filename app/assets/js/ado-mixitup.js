@@ -11,7 +11,12 @@ $("[data-mixitup]").mixItUp({
 var $workButton = $("#js-workbutton");
 
 $("[data-filter]").on("click", function() {
-  var toFilter = $(this).data("filter").slice(1);
+  var thisData = $(this).data("filter");
 
-  $workButton.attr("href", "projects?filter=" + toFilter);
+  // String starts with a period.
+  if (thisData.lastIndexOf(".", 0) === 0) {
+    $workButton.attr("href", "projects/" + thisData.slice(1) + "/");
+  } else {
+    $workButton.attr("href", "projects/");
+  }
 });
