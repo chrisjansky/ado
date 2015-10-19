@@ -1,8 +1,11 @@
 <?php
+// News Archive
 /*
 Template Name: Archive
 */
-get_header(); ?>
+get_header();
+?>
+
 
 <div class="l-nudge l-wrap">
   <h1 class="t-head--higher"><?php _e("News Archive", "ado") ?></h1>

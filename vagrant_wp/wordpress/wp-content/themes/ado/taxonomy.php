@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php
+// Student Detail
+get_header();
+?>
 
 <div class="m-profile l-nudge l-wrap">
   <h1 class="t-head--higher"><?php single_term_title() ?></h1>

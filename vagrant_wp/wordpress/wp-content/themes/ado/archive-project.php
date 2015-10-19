@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php
+// Projects Page
+get_header();
+?>
 
 <div class="l-nudge l-wrap">
   <h1 class="t-head--higher"><?php _e("All Projects", "ado") ?></h1>

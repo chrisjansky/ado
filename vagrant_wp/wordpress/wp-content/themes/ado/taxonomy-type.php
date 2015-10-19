@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php
+// Project Types
+get_header();
+?>
 
 <div class="m-profile l-nudge l-wrap">
   <h1 class="t-head--higher">
