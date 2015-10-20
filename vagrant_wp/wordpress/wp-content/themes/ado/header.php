@@ -43,10 +43,30 @@
     <div class="l-inline__cell">
       <nav class="o-nav">
         <ul class="o-nav__list">
-          <li class="o-nav__item"><a href="<?php echo home_url() ?>#gallery" data-scrollto data-nav-link class="o-nav__link"><?php _e("Projects", "ado") ?></a></li>
-          <li class="o-nav__item"><a href="<?php echo home_url() ?>#about" data-scrollto data-nav-link class="o-nav__link"><?php _e("About", "ado") ?></a></li>
-          <li class="o-nav__item"><a href="<?php echo home_url() ?>#students" data-scrollto data-nav-link class="o-nav__link"><?php _e("Students", "ado") ?></a></li>
-          <li class="o-nav__item"><a href="<?php echo home_url() ?>#contact" data-scrollto data-nav-link class="o-nav__link"><?php _e("Contact", "ado") ?></a></li>
+          <?php
+            if (is_front_page()) {
+              $link_prefix = null;
+              $link_suffix = null;
+              $link_data = "data-scrollto";
+            } else {
+              $link_prefix = home_url();
+              $link_suffix = "section-";
+              $link_data = null;
+            }
+
+            $links = array(
+              "gallery" => "Projects",
+              "about" => "About",
+              "students" => "Students",
+              "contact" => "Contact"
+            );
+            foreach ($links as $link => $title) :
+          ?>
+          <li class="o-nav__item">
+            <a href="<?php echo $link_prefix ?>#<?php echo $link_suffix . $link ?>" <?php echo $link_data ?> data-nav-link class="o-nav__link"><?php _e($title, "ado") ?></a>
+          </li>
+
+          <?php endforeach; ?>
 
           <li class="o-nav__item">
             <?php echo qtranxf_generateLanguageSelectCode(array("type"=>"custom", "format" => "%c")); ?>
