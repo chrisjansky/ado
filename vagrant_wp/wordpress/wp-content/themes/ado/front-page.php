@@ -35,10 +35,10 @@
       <div class="m-works__list">
 
         <?php
-          $projects_args = array(
+          $projects_posts = get_posts(array(
             "post_type" => "project",
-          );
-          $projects_posts = get_posts($projects_args);
+            "posts_per_page" => 16
+          ));
           foreach ($projects_posts as $post) : setup_postdata($post);
 
           // Get list of authors assigned to current post
