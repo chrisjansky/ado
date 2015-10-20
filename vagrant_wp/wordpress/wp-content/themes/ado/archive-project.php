@@ -1,23 +1,45 @@
 <?php
-// Projects Page
+// Projects Listing
 get_header();
 ?>
 
 <div class="l-nudge l-wrap">
-  <h1 class="t-head--higher"><?php _e("All Projects", "ado") ?></h1>
+  <h1 class="t-head--higher">
+    <?php
+      $current_term = get_query_var("term");
+
+      if ($current_term == null) {
+        // First item is active.
+        $link_class = "o-filter__link--active";
+
+        _e("All Projects", "ado");
+      } else {
+        // Assign in the other foreach loop.
+        $link_class = "";
+
+        printf(__("%s Projects", "ado"), single_term_title("", false));
+      }
+    ?>
+  </h1>
 
   <ul class="o-filter">
     <li class="o-filter__item">
-      <a href="<?php echo get_post_type_archive_link("project") ?>" class="o-filter__link--active t-link--secondary t-caps"><?php _e("All", "ado") ?></a>
+      <a href="<?php echo get_post_type_archive_link("project") ?>" class="<?php echo $link_class ?> t-link--secondary t-caps"><?php _e("All", "ado") ?></a>
     </li>
 
     <?php
       $project_terms = get_terms("type", array("orderby" => "id", "hide_empty" => false));
 
       foreach ($project_terms as $term):
+
+        if ($term->name == single_term_title("", false)) {
+          $link_class = "o-filter__link--active";
+        } else {
+          $link_class = "";
+        }
     ?>
       <li class="o-filter__item">
-        <a href="<?php echo get_term_link($term) ?>" class="t-link--secondary t-caps"><?php _e($term->name, "ado") ?></a>
+        <a href="<?php echo get_term_link($term) ?>" class="<?php echo $link_class ?> t-link--secondary t-caps"><?php _e($term->name, "ado") ?></a>
       </li>
     <?php endforeach; ?>
 
@@ -26,7 +48,8 @@ get_header();
   <div class="m-works">
 
     <div class="m-works__list">
-      <?php if (have_posts()) : while (have_posts()) : the_post();
+      <?php
+        if (have_posts()) : while (have_posts()) : the_post();
 
         // Get list of authors assigned to current post
         $post_taxonomies = array ("bachelor", "master", "graduate");
