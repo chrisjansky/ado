@@ -6,7 +6,6 @@ Template Name: Archive
 get_header();
 ?>
 
-
 <div class="l-nudge l-wrap">
   <h1 class="t-head--higher"><?php _e("News Archive", "ado") ?></h1>
 </div>
@@ -18,7 +17,6 @@ get_header();
       $news_paged = (get_query_var("paged")) ? get_query_var("paged") : 1;
 
       query_posts(array(
-        "category_name" => "news",
         "posts_per_page" => 5,
         "paged" => $news_paged
       ));
