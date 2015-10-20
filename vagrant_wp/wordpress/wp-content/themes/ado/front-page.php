@@ -42,7 +42,7 @@
           foreach ($projects_posts as $post) : setup_postdata($post);
 
           // Get list of authors assigned to current post
-          $post_taxonomies = array ("bachelor", "master", "graduate");
+          $post_taxonomies = array('person');
           // wp_get_post_terms for array of taxonomies, get_the_terms for just one
           $post_terms = wp_get_post_terms($post->ID, $post_taxonomies);
 
@@ -54,6 +54,8 @@
             }
 
             $terms_concat = join(", ", $terms_array);
+          } else {
+            $terms_concat = null;
           }
 
           // Get list of project types assigned to current post
@@ -68,6 +70,8 @@
 
             // Create string separated by spaces, to output in class list
             $types_concat = join(" ", $types_array);
+          } else {
+            $types_concat = null;
           }
         ?>
 
@@ -100,8 +104,9 @@
     <div class="m-news__list">
 
       <?php
-        $news_args = array("posts_per_page" => 3);
-        $news_posts = get_posts($news_args);
+        $news_posts = get_posts(array(
+          "posts_per_page" => 3
+        ));
 
         $archive_link = get_permalink(get_page_by_path("archive"));
 
@@ -136,54 +141,48 @@
   <div class="m-students__content">
     <ul data-tabs class="o-tabs">
       <?php
-        $group_taxonomies = array("bachelor", "master", "graduate");
+        // Get only top-level terms.
+        $author_term = 'person';
+        $author_groups = get_terms($author_term, array(
+          "orderby" => "id",
+          "hide_empty" => false,
+          "parent" => 0
+        ));
 
-        foreach ($group_taxonomies as $key=>$group_taxonomy):
+        if (!empty($author_groups) && !is_wp_error($author_groups)):
 
-          $terms = get_terms($group_taxonomy, array("hide_empty" => false));
+          foreach ($author_groups as $author_group):
+            $group_items = get_terms($author_term, array(
+              "hide_empty" => false,
+              "parent" => $author_group->term_id
+            ));
 
-          if (!empty($terms) && !is_wp_error($terms)):
-
-            switch ($group_taxonomy) {
-              case "bachelor":
-                $group_slug = "bca";
-                $group_title = "Bachelors";
-                break;
-              case "master":
-                $group_slug = "mga";
-                $group_title = "Masters";
-                break;
-              case "graduate":
-                $group_slug = "grad";
-                $group_title = "Graduates";
-                break;
-            } ?>
-
-            <li class="o-tabs__item o-group o-group--<?php echo $group_slug ?>">
-              <button class="o-tabs__link o-toggle t-link--secondary t-caps">
-                <?php _e($group_title, "ado") ?>
-              </button>
-              <div class="o-tabs__content">
-                <ul class="o-people">
-
-                  <?php foreach ($terms as $term):
-                    $term_link = get_term_link($term);
-
-                    if ($term->count > 0): ?>
-                      <li class="o-people__item"><a href="<?php echo esc_url($term_link) ?>" class="o-people__link t-link--primary"><?php echo $term->name ?></a></li>
-                    <?php else: ?>
-                      <li class="o-people__item"><?php echo $term->name ?></li>
-                  <?php endif; endforeach; ?>
-
-                </ul>
-              </div>
-            </li>
-          <?php endif;
-        endforeach;
+            if(!empty($group_items) && !is_wp_error($group_items)):
       ?>
+        <li class="o-tabs__item o-group o-group--<?php echo $author_group->slug ?>">
+          <button class="o-tabs__link o-toggle t-link--secondary t-caps">
+            <?php echo $author_group->name ?>
+          </button>
+          <div class="o-tabs__content">
+            <ul class="o-people">
+              <?php
+                foreach ($group_items as $item):
+                  $item_link = get_term_link($item);
+
+                  if ($item->count > 0):
+              ?>
+                <li class="o-people__item"><a href="<?php echo esc_url($item_link) ?>" class="o-people__link t-link--primary"><?php echo $item->name ?></a></li>
+              <?php else: ?>
+                <li class="o-people__item"><?php echo $item->name ?></li>
+              <?php endif; endforeach; ?>
+          </div>
+        </li>
+
+      <?php endif; endforeach; endif; ?>
     </ul>
   </div>
 </section>
+
 <section id="contact" data-section class="m-contact">
   <div class="l-wrap">
     <h2 class="m-contact__title t-head--higher"><?php _e("Contact", "ado") ?></h2>

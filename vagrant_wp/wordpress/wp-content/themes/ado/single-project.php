@@ -10,7 +10,7 @@ get_header();
     <div class="o-bar__title">
       <span class="t-caps">
         <?php
-          $post_taxonomies = array ("bachelor", "master", "graduate");
+          $post_taxonomies = array("person");
           // wp_get_post_terms for array of taxonomies, get_the_terms for just one
           $post_terms = wp_get_post_terms($post->ID, $post_taxonomies);
 
@@ -22,6 +22,8 @@ get_header();
             }
 
             $terms_concat = join(", ", $terms_array);
+          } else {
+            $terms_concat = null;
           }
 
           echo $terms_concat;

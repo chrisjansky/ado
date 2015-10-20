@@ -52,7 +52,7 @@ get_header();
         if (have_posts()) : while (have_posts()) : the_post();
 
         // Get list of authors assigned to current post
-        $post_taxonomies = array ("bachelor", "master", "graduate");
+        $post_taxonomies = array('author');
         // wp_get_post_terms for array of taxonomies, get_the_terms for just one
         $post_terms = wp_get_post_terms($post->ID, $post_taxonomies);
 
@@ -64,6 +64,8 @@ get_header();
           }
 
           $terms_concat = join(", ", $terms_array);
+        } else {
+          $terms_concat = null;
         }
       ?>
 

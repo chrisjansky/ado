@@ -88,42 +88,22 @@ function ado_create_posttypes() {
       'has_archive' => true,
       'menu_position' => 5,
       'menu_icon' => 'dashicons-format-gallery',
-      'taxonomies' => array('bachelor', 'master', 'graduate'),
+      'taxonomies' => array('person'),
       'supports' => array('title', 'editor', 'thumbnail'),
       'rewrite' => array('slug' => 'projects')
     )
   );
 }
 function ado_create_taxonomies() {
-  register_taxonomy('bachelor', 'project', array(
+  register_taxonomy('person', 'project', array(
     'labels' => array(
-        'name' => 'Bachelor’s',
-        'menu_name' => 'Bachelor’s',
-        'add_new_item' => 'Add New Bachelor'
+        'name' => 'Project Author',
+        'menu_name' => 'Project Authors',
+        'add_new_item' => 'Add New Author'
       ),
     'hierarchical' => true,
     'show_admin_column' => true,
-    'rewrite' => array('slug' => 'bachelor')
-  ));
-  register_taxonomy('master', 'project', array(
-    'labels' => array(
-        'name' => 'Master’s',
-        'menu_name' => 'Master’s',
-        'add_new_item' => 'Add New Master'
-      ),
-    'hierarchical' => true,
-    'show_admin_column' => true,
-    'rewrite' => array('slug' => 'master')
-  ));
-  register_taxonomy('graduate', 'project', array(
-    'labels' => array(
-        'name' => 'Graduates',
-        'menu_name' => 'Graduates',
-        'add_new_item' => 'Add New Graduate'
-      ),
-    'hierarchical' => true,
-    'show_admin_column' => true,
-    'rewrite' => array('slug' => 'graduate')
+    'rewrite' => array('slug' => 'people')
   ));
   register_taxonomy('type', 'project', array(
     'labels' => array(
