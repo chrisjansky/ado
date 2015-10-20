@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ADO\n"
-"POT-Creation-Date: 2015-10-18 22:39+0100\n"
-"PO-Revision-Date: 2015-10-18 22:39+0100\n"
+"POT-Creation-Date: 2015-10-21 01:00+0100\n"
+"PO-Revision-Date: 2015-10-21 01:00+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: cs\n"
@@ -16,16 +16,20 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ../..\n"
 
-#: ../../archive-project.php:4 ../../single-project.php:32
+#: ../../archive-project.php:15 ../../single-project.php:37
 msgid "All Projects"
 msgstr "Všechny projekty"
 
-#: ../../archive-project.php:8 ../../front-page.php:16
-#: ../../taxonomy-type.php:13
+#: ../../archive-project.php:20
+#, php-format
+msgid "%s Projects"
+msgstr "Kategorie: %s"
+
+#: ../../archive-project.php:27 ../../front-page.php:16
 msgid "All"
 msgstr "Vše"
 
-#: ../../archive.php:8
+#: ../../archive.php:11
 msgid "News Archive"
 msgstr "Všechny aktuality"
 
@@ -53,31 +57,31 @@ msgstr "Magisterské"
 msgid "Finals"
 msgstr "Klauzurní"
 
-#: ../../front-page.php:87
+#: ../../front-page.php:91
 msgid "More Projects"
 msgstr "Další projekty"
 
-#: ../../front-page.php:94
+#: ../../front-page.php:98
 msgid "About Us"
 msgstr "O nás"
 
-#: ../../front-page.php:96
+#: ../../front-page.php:100
 msgid "More Info"
 msgstr "Více informací"
 
-#: ../../front-page.php:99
+#: ../../front-page.php:103
 msgid "News"
 msgstr "Aktuality"
 
-#: ../../front-page.php:131
+#: ../../front-page.php:136
 msgid "Archive"
 msgstr "Archiv"
 
-#: ../../front-page.php:135 ../../taxonomy.php:26
+#: ../../front-page.php:140 ../../taxonomy.php:29
 msgid "Students & Graduates"
 msgstr "Studenti a absolventi"
 
-#: ../../front-page.php:189 ../../header.php:49
+#: ../../front-page.php:188
 msgid "Contact"
 msgstr "Kontakty"
 
@@ -93,34 +97,26 @@ msgstr "FMK"
 msgid "Shoe Design Studio"
 msgstr "Ateliér Design Obuvi"
 
-#: ../../header.php:46
-msgid "Projects"
-msgstr "Projekty"
-
-#: ../../header.php:47
-msgid "About"
-msgstr "O nás"
-
-#: ../../header.php:48
-msgid "Students"
-msgstr "Studenti"
-
-#: ../../single-project.php:40
+#: ../../single-project.php:45
 msgid "More from this Student"
 msgstr "Práce studenta"
 
-#: ../../single-project.php:61
+#: ../../single-project.php:66
 msgid "No Photos Found."
 msgstr "Nebyly nalezeny žádné fotky."
 
-#: ../../single-project.php:66
+#: ../../single-project.php:71
 msgid "About This Project"
 msgstr "O projektu"
 
-#: ../../taxonomy-type.php:6
-#, php-format
-msgid "%s Projects"
-msgstr "Kategorie: %s"
+#~ msgid "Projects"
+#~ msgstr "Projekty"
+
+#~ msgid "About"
+#~ msgstr "O nás"
+
+#~ msgid "Students"
+#~ msgstr "Studenti"
 
 #~ msgid " Projects"
 #~ msgstr " Projekty"
