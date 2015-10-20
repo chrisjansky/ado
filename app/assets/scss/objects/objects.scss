@@ -36,10 +36,6 @@
   @include reset-list;
 }
 
-.o-nav__divider {
-  @include margin(null em($ratio--xs));
-}
-
 .o-nav__item {
   display: inline-block;
   text-transform: uppercase;
@@ -61,6 +57,25 @@
 .o-nav__link--active:after {
   width: 100%;
   left: 0;
+}
+
+.o-languages {
+  @include reset-list;
+}
+.o-languages__item {
+  display: inline-block;
+
+  &:last-child {
+    &:before {
+      content: "/";
+      @include margin(null em($ratio--xs) null em($ratio--t));
+    }
+  }
+}
+.o-languages__item--active a {
+  position: relative;
+
+  @include underlineActive;
 }
 
 .o-textlink {
@@ -206,6 +221,8 @@
 .o-map {
   position: relative;
   height: 60vh;
+
+  filter: grayscale(100%);
 
   iframe {
     @include position(absolute, 0 null null 0);

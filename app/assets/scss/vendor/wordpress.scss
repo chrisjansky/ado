@@ -22,14 +22,12 @@ a.page-numbers {
 
 // qTranslate X
 .qtranxs_language_chooser {
-  @include reset-list;
+  @extend .o-languages;
 }
 .language-chooser-item {
-  display: inline-block;
+  @extend .o-languages__item;
 
   &.active {
-    position: relative;
-
-    @include underlineActive;
+    @extend .o-languages__item--active;
   }
 }

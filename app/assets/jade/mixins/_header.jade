@@ -19,6 +19,8 @@ mixin header(mode)
                 li.o-nav__item
                   a.o-nav__link(href="##{page.slug}", data-scrollto, data-nav-link)= page.title
             li.o-nav__item
-              a(href="#").o-nav__link.o-nav__link--active CZ
-              span.o-nav__divider /
-              a(href="#").o-nav__link EN
+              ul.o-languages
+                li.o-languages__item
+                  a(href="#").o-nav__link CZ
+                li.o-languages__item.o-languages__item--active
+                  a(href="#").o-nav__link EN
