@@ -79,11 +79,10 @@ add_image_size("ado_project_full", 9999, 1000);
 // Custom post types
 function ado_create_posttypes() {
   register_post_type('project',
-  // CPT Options
     array(
       'labels' => array(
         'name' => 'Projects',
-        'singular_name' => 'project'
+        'singular_name' => 'Project'
       ),
       'public' => true,
       'has_archive' => true,
@@ -134,17 +133,36 @@ function ado_create_taxonomies() {
       ),
     'hierarchical' => true,
     'show_admin_column' => true,
-    'rewrite' => array('slug' => 'type')
+    'rewrite' => array('slug' => 'projects')
   ));
 }
-function cleanse_rewrite() {
-  flush_rewrite_rules();
+
+// https://codeable.io/community/get-your-custom-taxonomy-urls-in-order/
+function generate_taxonomy_rewrite_rules( $wp_rewrite ) {
+  $rules = array();
+  $post_types = get_post_types( array( 'name' => 'project', 'public' => true, '_builtin' => false ), 'objects' );
+  $taxonomies = get_taxonomies( array( 'name' => 'type', 'public' => true, '_builtin' => false ), 'objects' );
+
+  foreach ( $post_types as $post_type ) {
+    $post_type_name = $post_type->name; // 'developer'
+    $post_type_slug = $post_type->rewrite['slug']; // 'developers'
+
+    foreach ( $taxonomies as $taxonomy ) {
+      if ( $taxonomy->object_type[0] == $post_type_name ) {
+        $terms = get_categories( array( 'type' => $post_type_name, 'taxonomy' => $taxonomy->name, 'hide_empty' => 0 ) );
+        foreach ( $terms as $term ) {
+          $rules[$post_type_slug . '/' . $term->slug . '/?$'] = 'index.php?' . $term->taxonomy . '=' . $term->slug;
+        }
+      }
+    }
+  }
+  $wp_rewrite->rules = $rules + $wp_rewrite->rules;
 }
 
 // Hooking up our function to theme setup
 add_action('init', 'ado_create_posttypes');
 add_action('init', 'ado_create_taxonomies');
-add_action('init', 'cleanse_rewrite');
+add_action('generate_rewrite_rules', 'generate_taxonomy_rewrite_rules');
 
 function ado_fonts() {
   wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Playfair+Display:400|Playfair+Display+SC:400,700|Open+Sans:400,600');
@@ -171,5 +189,18 @@ add_filter("simple_fields_get_selected_connector_for_post", "ado_sf_connect", 10
 // Get rid of Emoji fluff.
 remove_action("wp_head", "print_emoji_detection_script", 7);
 remove_action("wp_print_styles", "print_emoji_styles" );
+
+function alter_query($query) {
+  // Do not alter the query on wp-admin pages and only alter it if it's the main query.
+  if (!is_admin() && $query->is_main_query()){
+
+    // For projects archive.
+    if (is_post_type_archive()) {
+      $query->set('posts_per_page', 20);
+    }
+
+  }
+}
+add_action('pre_get_posts', 'alter_query');
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
