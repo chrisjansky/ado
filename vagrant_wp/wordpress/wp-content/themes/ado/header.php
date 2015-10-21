@@ -55,15 +55,15 @@
             }
 
             $links = array(
-              "gallery" => "Projects",
-              "about" => "About",
-              "students" => "Students",
-              "contact" => "Contact"
+              "gallery" => __("Projects", "ado"),
+              "about" => __("About", "ado"),
+              "students" => __("Students", "ado"),
+              "contact" => __("Contact", "ado")
             );
             foreach ($links as $link => $title) :
           ?>
           <li class="o-nav__item">
-            <a href="<?php echo $link_prefix ?>#<?php echo $link_suffix . $link ?>" <?php echo $link_data ?> data-nav-link class="o-nav__link"><?php _e($title, "ado") ?></a>
+            <a href="<?php echo $link_prefix ?>#<?php echo $link_suffix . $link ?>" <?php echo $link_data ?> data-nav-link class="o-nav__link"><?php echo $title ?></a>
           </li>
 
           <?php endforeach; ?>
