@@ -21,9 +21,7 @@
       "app/assets/js/ado-mixitup.js",
       "app/assets/js/ado-waypoints.js",
       "app/assets/js/ado-scrollto.js",
-      "app/assets/js/ado-swiper.js",
-
-      "bower_components/chj-framework/app/assets/js/chj-external.js"
+      "app/assets/js/ado-swiper.js"
     ],
     "vendor": [
     ],
