@@ -21,21 +21,22 @@
 .m-hero {
   position: relative;
 
-  margin: em($ratio--l);
-
-  background-size: cover;
-  background-position: center;
-
-  height: 90vh;
+  height: 100vh;
+  
+  max-height: em(800);
 }
 
 .m-hero__head {
   position: absolute;
-  bottom: 20%;
-  left: 7.5%;
+  top: 42.5%;
+  left: em($ratio--b);
+  right: em($ratio--b);
 
-  // Good ol' magic number.
-  max-width: em(850, $unit--xh);
+  transform: translateY(-50%);
+
+  @include margin(0 null);
+
+  text-align: center;
 }
 
 .m-hero__arrow {
@@ -44,9 +45,11 @@
   right: 0;
   bottom: 0;
 
-  padding-bottom: em($ratio--s);
+  @include media($desktop) {
+    padding-bottom: em($ratio--s);
+  }
 
-  font-size: em($ratio--l);
+  font-size: #{$icon--m + "px"};
 
   text-align: center;
 
@@ -59,14 +62,31 @@
     color: $grey--900;
   }
 }
+.m-hero__background {
+  // Hooray for magic number.
+  @include position(absolute, em(128) 0 0 0);
+  z-index: -1;
+
+  background-size: cover;
+  background-position: center;
+
+  @include media($large) {
+    left: em($ratio--m);
+    right: em($ratio--m);
+  }
+  @include media($desktop) {
+    top: em(82);
+    bottom: em($ratio--m);
+  }
+}
 
 .m-works {
-  margin-top: em($ratio--l);
-
   text-align: center;
 }
 
 .m-students {
+  width: 100%;
+
   position: relative;
 
   text-align: center;
@@ -116,9 +136,7 @@
 }
 
 .m-contact__item {
-  @include span-columns(4);
-}
-
-.m-profile {
-  padding-bottom: 0;
+  @include media($large) {
+    @include span-columns(4 of $columns__desktop);
+  }
 }

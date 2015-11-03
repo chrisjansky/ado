@@ -1,9 +1,20 @@
 .o-header {
-  @include position(fixed, 0 null null 0);
+  @include position(absolute, 0 null null 0);
+
+  @include media($large) {
+    position: fixed;
+  }
 
   width: 100%;
   z-index: 100;
   background-color: white;
+
+  @include media($small) {
+    @include padding(em($unit--m) null);
+  }
+  @include media($large) {
+    @include padding(em($ratio--m) null);
+  }
 }
 
 .o-logo {
@@ -24,39 +35,11 @@
 }
 
 .o-logo__studio {
-  color: $grey--900;
-}
-
-.o-nav {
-  font-size: em(14);
-  letter-spacing: em($ratio--t);
-}
-
-.o-nav__list {
-  @include reset-list;
-}
-
-.o-nav__item {
-  display: inline-block;
-  text-transform: uppercase;
-
-  & + & {
-    margin-left: em($ratio--l);
+  @include media($phone) {
+    display: block;
   }
-}
-
-.o-nav__link {
-  position: relative;
-
-  text-decoration: none;
-
-  @include underlinePassive;
-}
-
-.o-nav__link:hover:after,
-.o-nav__link--active:after {
-  width: 100%;
-  left: 0;
+  
+  color: $grey--900;
 }
 
 .o-languages {
@@ -79,25 +62,30 @@
 }
 
 .o-textlink {
-  position: relative;
-
-  display: inline-block;
+  display: block;
 
   font-family: $font__caps;
   letter-spacing: em($ratio--t);
   text-align: center;
   text-transform: uppercase;
 
-  margin-top: em($ratio--m);
-
   transition: color $duration--s;
 
+  margin-top: em($ratio--b);
+
+  @include media($large) {
+    margin-top: em($ratio--m);
+  }
+
   @include state--active {
-    &:after {
+    .o-textlink__text:after {
       width: 100%;
       left: 0;
     }
   }
+}
+.o-textlink__text {
+  position: relative;
 
   @include underlinePassive;
 }
@@ -110,28 +98,6 @@
 }
 .o-iconlink__icon--right {
   margin-left: em($ratio--s);
-}
-
-.o-filter {
-  text-align: center;
-
-  padding-left: 0;
-}
-.o-filter__item {
-  display: inline-block;
-
-  & + & {
-    margin-left: em($ratio--l);
-  }
-}
-.o-filter__link--active {
-  position: relative;
-
-  @include state--all {
-    color: $color1--500;
-  }
-
-  @include underlineActive;
 }
 
 .o-toggle {
@@ -158,64 +124,9 @@
   }
 }
 
-.o-work {
-  display: inline-block;
-
-  position: relative;
-
-  overflow: hidden;
-
-  width: em(240);
-
-  background-color: $grey--900;
-
-  @include margin(null flex-gutter() / 2 flex-gutter());
-}
-
 [data-target] {
   // Idiotic way of making MixItUp work.
   display: none;
-}
-
-.o-work__image {
-  display: block;
-
-  width: 100%;
-  height: auto;
-
-  transition: opacity $duration--s;
-
-  .o-work:hover & {
-    opacity: .5;
-  }
-}
-.o-work__info {
-  display: block;
-
-  position: absolute;
-  bottom: 0;
-  left: 0;
-
-  width: 100%;
-
-  text-align: left;
-
-  color: white;
-  @include padding(null em($ratio--s) em($unit--b) em($ratio--m));
-
-  transition: transform $duration--b;
-
-  transform: translateY(100%);
-
-  .o-work:hover & {
-    transform: translateY(0);
-  }
-}
-.o-work__title {
-  @include margin(0 null);
-}
-.o-work__name {
-  color: rgba(white, .5);
 }
 
 .o-map {
@@ -232,74 +143,6 @@
   }
 }
 
-.o-featured {
-  @include span-columns(4);
-}
-.o-featured__image {
-  height: auto;
-
-  @include margin(null auto);
-
-  transition: opacity $duration--s;
-}
-.o-featured__thumbnail {
-  display: block;
-
-  position: relative;
-
-  background-color: $grey--900;
-
-  margin-bottom: em($ratio--m);
-
-  @include state--active {
-    .o-featured__image {
-      opacity: .5;
-    }
-    .o-featured__overlay {
-      opacity: 1;
-    }
-  }
-}
-.o-featured__overlay {
-  @include position(absolute, 50% 0 null 0);
-
-  transform: translateY(-50%);
-
-  color: white;
-
-  opacity: 0;
-  transition: opacity $duration--s;
-}
-.o-featured__link {
-  display: block;
-
-  text-decoration: none;
-}
-.o-featured__text {
-  text-align: left;
-}
-.o-featured__button {
-  font-size: em($ratio--m);
-}
-
-.o-archived {
-  text-align: center;
-
-  & + & {
-    margin-top: em($ratio--xl);
-  }
-}
-.o-archived__date {
-  display: block;
-
-  margin-bottom: em($ratio--m);
-}
-.o-archived__content {
-  max-width: em($width--xl);
-
-  @include margin(em($ratio--l) auto null);
-}
-
 .o-people {
   list-style-type: none;
   padding-left: 0;
@@ -309,8 +152,14 @@
 .o-people__item {
   margin-top: em($ratio--xxs);
 
-  @include span-columns(4 of $columns__desktop);
-  @include omega(3n);
+  @include media($tablet) {
+    @include span-columns(6 of $columns__tablet);
+    @include omega(2n);
+  }
+  @include media($desktop) {
+    @include span-columns(4 of $columns__desktop);
+    @include omega(3n);
+  }
 }
 
 .o-pagination {
@@ -356,31 +205,6 @@
   @include underlineActive;
 }
 
-
-.o-carousel__item {
-  width: auto;
-
-  & + & {
-    margin-left: flex-gutter();
-  }
-
-  opacity: .25;
-
-  transition: opacity $duration--b;
-}
-
-.o-carousel__item--small {
-  height: em(360);
-}
-.o-carousel__item--large {
-  height: em(500);
-}
-
-.o-carousel__image {
-  width: auto;
-  height: 100%;
-}
-
 .o-description {
   text-align: center;
 
@@ -393,13 +217,21 @@
 }
 
 .o-bar__title {
-  @include position(absolute, 0 em(300) null em(300));
-
   text-align: center;
 
   pointer-events: none;
 
   @include collapse-children;
+
+  @include media($small) {
+    margin-bottom: em($ratio--b);
+  }
+  @include media($tablet) {
+    margin-bottom: em($ratio--m);
+  }
+  @include media($desktop) {
+    @include position(absolute, 0 em(300) null em(300));
+  }
 }
 
 .o-error {
@@ -409,7 +241,20 @@
 
   color: $color1--100;
   background-color: transparent;
+
+  padding: em($ratio--b);
 }
 .o-error__icon {
   padding-right: em($ratio--b);
+}
+
+.o-section {
+  // Reset .l-wrap padding if applicable.
+  padding-top: 0;
+
+  margin-top: em($ratio--l);
+
+  @include media($desktop) {
+    margin-top: em($ratio--xl);
+  }
 }
