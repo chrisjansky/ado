@@ -20,8 +20,9 @@ Config
 @import "neat";
 
 @import "mixins/mixins";
+@import "mixins/offset";
 
-@import "chj-framework/app/assets/scss/vendor/neat";
+@import "vendor/neat";
 @import "vendor/headroom";
 @import "vendor/swiper";
 @import "vendor/wordpress";
@@ -40,9 +41,9 @@ Layout
 
 Styleguide 2.
 */
+@import "layout/l-wrap";
+@import "layout/l-inline";
 @import "layout/layout";
-@import "chj-framework/app/assets/scss/layout/l-wrap";
-@import "chj-framework/app/assets/scss/layout/l-inline";
 
 /*
 Typography
@@ -57,8 +58,13 @@ Objects
 Styleguide 4.
 */
 @import "objects/objects";
+@import "objects/o-archived";
+@import "objects/o-carousel";
+@import "objects/o-featured";
 @import "objects/o-tabs";
-@import "chj-framework/app/assets/scss/objects/o-carousel";
+@import "objects/o-nav";
+@import "objects/o-work";
+@import "objects/o-filter";
 
 @import "misc/temp";
 
