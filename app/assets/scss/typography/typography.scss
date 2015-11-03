@@ -1,30 +1,47 @@
 .t-head--top {
   font-family: $font__serif;
   font-weight: $font__serif--regular;
-  font-size: em($unit--xh);
-
-  line-height: $spacing--xs;
 
   color: $grey--700;
+
+  font-size: em($unit--xl);
+  line-height: $spacing--s;
+
+  @include media($tablet) {
+    font-size: em($unit--xxl);
+  }
+  @include media($desktop) {
+    font-size: em($unit--xh);
+    line-height: $spacing--xs;
+  }
 }
 
 .t-head--higher {
   font-family: $font__caps;
   font-weight: $font__caps--regular;
 
-  font-size: em($unit--xl);
   letter-spacing: em($ratio--t);
   text-align: center;
   text-transform: lowercase;
 
   color: $grey--600;
+
+  font-size: em($unit--l);
+
+  @include media($desktop) {
+    font-size: em($unit--xl);
+  }
 }
 
 .t-head--high {
-  font-size: em($unit--l);
-  
+  font-size: em($unit--m);
+
   font-family: $font__serif;
   font-weight: $font__serif--regular;
+  
+  @include media($desktop) {
+    font-size: em($unit--l);
+  }
 }
 
 .t-head--low {
