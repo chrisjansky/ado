@@ -2,7 +2,7 @@
   "pages": [
     {
       "slug": "gallery",
-      "title": "Práce"
+      "title": "Projekty"
     },
     {
       "slug": "about",
@@ -10,7 +10,7 @@
     },
     {
       "slug": "students",
-      "title": "Seznam studentů"
+      "title": "Studenti"
     },
     {
       "slug": "contact",
