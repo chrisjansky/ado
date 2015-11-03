@@ -1,7 +1,9 @@
-.headroom {
-  transition: transform $duration--b;
-}
+@include media($large) {
+  .headroom {
+    transition: transform $duration--b;
+  }
 
-.headroom--unpinned {
-  transform: translateY(-100%);
+  .headroom--unpinned {
+    transform: translateY(-100%);
+  }  
 }
