@@ -1,0 +1,60 @@
+@mixin offset($direction: null) {
+
+  @if $direction == "horizontal" {
+
+    @include padding(null em($ratio--b));
+
+    @include media($phablet) {
+      @include padding(null em($ratio--m));
+    }
+    @include media($tablet) {
+      @include padding(null em($ratio--l));
+    }
+    @include media($desktop) {
+      @include padding(null em($ratio--xl));
+    }
+
+  } @else if $direction == "vertical" {
+
+    @include padding(em($ratio--b) null);
+
+    @include media($phablet) {
+      @include padding(em($ratio--m) null);
+    }
+    @include media($tablet) {
+      @include padding(em($ratio--l) null);
+    }
+    @include media($desktop) {
+      @include padding(em($ratio--xl) null);
+    }
+
+  } @else if $direction == null {
+
+    padding: em($ratio--b);
+
+    @include media($phablet) {
+      padding: em($ratio--m);
+    }
+    @include media($tablet) {
+      padding: em($ratio--l);
+    }
+    @include media($desktop) {
+      padding: em($ratio--xl);
+    }
+
+  } @else {
+
+    #{"padding-" + $direction}: em($ratio--b);
+
+    @include media($phablet) {
+      #{"padding-" + $direction}: em($ratio--m);
+    }
+    @include media($tablet) {
+      #{"padding-" + $direction}: em($ratio--l);
+    }
+    @include media($desktop) {
+      #{"padding-" + $direction}: em($ratio--xl);
+    }
+    
+  }
+}
