@@ -1,3 +1,12 @@
 .l-nudge {
-  margin-top: em($ratio--xl);
+  margin-top: em(136);
+
+  @include media($phone) {
+    padding-bottom: em($ratio--m);
+  }
+  @include media($desktop) {
+    margin-top: em(82);
+  }
+
+  @include offset();
 }
