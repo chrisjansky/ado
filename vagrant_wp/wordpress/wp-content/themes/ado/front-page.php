@@ -2,7 +2,7 @@
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 <section class="m-hero">
-  <div style="background-image: url('assets/images/bg_top.jpg');" class="m-hero__background">
+  <div style="background-image: url('<?php echo get_template_directory_uri() ?>/library/images/bg_top.jpg');" class="m-hero__background">
     <h1 class="t-head--top m-hero__head">
       <?php echo simple_fields_value("sfg_homepage_title"); ?>
     </h1>
