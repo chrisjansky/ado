@@ -1,6 +1,6 @@
 mixin header(mode)
-  header#js-header.o-header.l-wrap.l-wrap--small
-    .l-inline
+  header#js-header.o-header.l-wrap
+    .l-inline--later
     
       .l-inline__cell
         a.o-logo(href="index")
@@ -9,6 +9,7 @@ mixin header(mode)
 
       .l-inline__cell
         nav.o-nav
+          button.o-nav__toggle.ion-navicon(data-nav) Menu
           ul.o-nav__list
             if (mode == "subpage")
               each page in pages
