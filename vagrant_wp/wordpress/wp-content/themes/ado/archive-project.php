@@ -3,7 +3,7 @@
 get_header();
 ?>
 
-<div class="l-nudge l-wrap">
+<div class="l-nudge">
   <h1 class="t-head--higher">
     <?php
       $current_term = get_query_var("term");
@@ -44,61 +44,62 @@ get_header();
     <?php endforeach; ?>
 
   </ul>
+</div>
 
-  <div class="m-works">
+<div class="m-works l-wrap--horizontal">
 
-    <div class="m-works__list">
-      <?php
-        if (have_posts()) : while (have_posts()) : the_post();
+  <div class="m-works__list">
+    <?php
+      if (have_posts()) : while (have_posts()) : the_post();
 
-        // Get list of authors assigned to current post
-        $post_taxonomies = array('author');
-        // wp_get_post_terms for array of taxonomies, get_the_terms for just one
-        $post_terms = wp_get_post_terms($post->ID, $post_taxonomies);
+      // Get list of authors assigned to current post
+      $post_taxonomies = array('author');
+      // wp_get_post_terms for array of taxonomies, get_the_terms for just one
+      $post_terms = wp_get_post_terms($post->ID, $post_taxonomies);
 
-        if ($post_terms && ! is_wp_error($post_terms)) {
-          $terms_array = array();
+      if ($post_terms && ! is_wp_error($post_terms)) {
+        $terms_array = array();
 
-          foreach ($post_terms as $term) {
-            $terms_array[] = $term->name;
-          }
-
-          $terms_concat = join(", ", $terms_array);
-        } else {
-          $terms_concat = null;
+        foreach ($post_terms as $term) {
+          $terms_array[] = $term->name;
         }
-      ?>
 
-        <a href="<?php the_permalink() ?>" class="o-work">
-          <?php if (has_post_thumbnail()): ?>
-            <?php the_post_thumbnail("ado_project_thumb", array("class" => "o-work__image")); ?>
-          <?php endif; ?>
-          <div class="o-work__info">
-            <h3 class="o-work__title t-head--bottom"><?php the_title(); ?></h3>
-            <span class="o-work__name t-smallcaps"><?php echo $terms_concat ?></span>
-          </div>
-        </a>
+        $terms_concat = join(", ", $terms_array);
+      } else {
+        $terms_concat = null;
+      }
+    ?>
 
-      <?php endwhile; endif; ?>
-    </div>
+      <a href="<?php the_permalink() ?>" class="o-work">
+        <?php if (has_post_thumbnail()): ?>
+          <?php the_post_thumbnail("ado_project_thumb", array("class" => "o-work__image")); ?>
+        <?php endif; ?>
+        <div class="o-work__info">
+          <h3 class="o-work__title t-head--bottom"><?php the_title(); ?></h3>
+          <span class="o-work__name t-smallcaps"><?php echo $terms_concat ?></span>
+        </div>
+      </a>
 
-    <ul class="o-pagination">
-      <?php
-        $project_pagination = paginate_links(array(
-          "type" => "array",
-          "prev_text" => "&larr;",
-          "next_text" => "&rarr;"
-        ));
-
-        if ($project_pagination):
-          foreach ($project_pagination as $page):
-      ?>
-        <li class="o-pagination__item"><?php echo $page ?></li>
-      <?php endforeach; endif; ?>
-    </ul>
-
+    <?php endwhile; endif; ?>
   </div>
 
 </div>
+
+<footer class="o-section l-wrap l-wrap--big">
+  <ul class="o-pagination">
+    <?php
+      $project_pagination = paginate_links(array(
+        "type" => "array",
+        "prev_text" => "&larr;",
+        "next_text" => "&rarr;"
+      ));
+
+      if ($project_pagination):
+        foreach ($project_pagination as $page):
+    ?>
+      <li class="o-pagination__item"><?php echo $page ?></li>
+    <?php endforeach; endif; ?>
+  </ul>
+</footer>
 
 <?php get_footer(); ?>

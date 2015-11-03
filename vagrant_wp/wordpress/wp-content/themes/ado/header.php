@@ -37,11 +37,12 @@
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 
-<header id="js-header" class="o-header l-wrap l-wrap--small">
-  <div class="l-inline">
+<header id="js-header" class="o-header l-wrap">
+  <div class="l-inline--later">
     <div class="l-inline__cell"><a href="<?php echo home_url() ?>" class="o-logo"><?php _e("TBU", "ado") ?>/<?php _e("FMC", "ado") ?>/<span class="o-logo__studio"><?php _e("Shoe Design Studio", "ado") ?></span></a></div>
     <div class="l-inline__cell">
       <nav class="o-nav">
+        <button data-nav class="o-nav__toggle ion-navicon">Menu</button>
         <ul class="o-nav__list">
           <?php
             if (is_front_page()) {

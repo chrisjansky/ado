@@ -3,10 +3,11 @@
 get_header();
 ?>
 
-<div class="m-profile l-nudge l-wrap">
+<div class="l-nudge">
   <h1 class="t-head--higher"><?php single_term_title() ?></h1>
 </div>
-<div class="m-works">
+
+<section class="m-works l-wrap--horizontal">
   <div class="m-works__list">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -25,7 +26,7 @@ get_header();
   </div>
 </div>
 
-<section id="students" data-section class="m-students">
+<section id="students" data-section class="m-students o-section l-wrap">
   <h2 class="t-head--high"><?php _e("Students & Graduates", "ado") ?></h2>
   <div class="m-students__content">
     <ul data-tabs class="o-tabs">

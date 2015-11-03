@@ -4,7 +4,7 @@ get_header();
 ?>
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-<div class="l-nudge l-wrap">
+<div class="l-nudge">
   <h1 class="t-head--higher"><?php the_title() ?></h1>
   <div class="o-bar">
     <div class="o-bar__title">
@@ -30,7 +30,7 @@ get_header();
         ?>
       </span>
     </div>
-    <div class="l-inline">
+    <div class="l-inline--sooner">
       <div class="l-inline__cell">
         <a href="<?php echo get_post_type_archive_link("project") ?>" class="o-iconlink">
           <i class="o-iconlink__icon--left ion-ios-arrow-left"></i>
@@ -53,10 +53,10 @@ get_header();
 <?php $project_photos = simple_fields_values("sfg_images_item");
   if ($project_photos):
 ?>
-  <div data-swiper class="o-carousel swiper-container l-wrap l-wrap--horizontal">
+  <div data-swiper class="o-carousel o-carousel--large swiper-container l-wrap--horizontal">
     <ul class="o-carousel__list swiper-wrapper">
       <?php foreach ($project_photos as $photo): ?>
-        <li class="o-carousel__item o-carousel__item--large swiper-slide">
+        <li class="o-carousel__item swiper-slide">
           <?php echo wp_get_attachment_image($photo["id"], "ado_project_full", false, array("class" => "o-carousel__image")) ?>
         </li>
       <?php endforeach; ?>

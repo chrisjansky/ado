@@ -6,7 +6,7 @@ Template Name: Archive
 get_header();
 ?>
 
-<div class="l-nudge l-wrap">
+<div class="l-nudge">
   <h1 class="t-head--higher"><?php _e("News Archive", "ado") ?></h1>
 </div>
 
@@ -29,10 +29,10 @@ get_header();
         <?php $news_photos = simple_fields_values("sfg_images_item");
           if ($news_photos):
         ?>
-          <div data-swiper class="o-carousel swiper-container">
+          <div data-swiper class="o-carousel o-carousel--small swiper-container">
             <ul class="o-carousel__list swiper-wrapper">
               <?php foreach ($news_photos as $photo): ?>
-                <li class="o-carousel__item o-carousel__item--small swiper-slide">
+                <li class="o-carousel__item swiper-slide">
                   <?php echo wp_get_attachment_image($photo["id"], "ado_post_full", false, array("class" => "o-carousel__image")) ?>
                 </li>
               <?php endforeach; ?>
@@ -46,23 +46,23 @@ get_header();
       </article>
     <?php endwhile; ?>
   </div>
+</div>
 
-  <div class="l-wrap">
-    <ul class="o-pagination">
-      <?php
-        $project_pagination = paginate_links(array(
-          "type" => "array",
-          "prev_text" => "&larr;",
-          "next_text" => "&rarr;"
-        ));
+<div class="o-section l-wrap l-wrap--big">
+  <ul class="o-pagination">
+    <?php
+      $project_pagination = paginate_links(array(
+        "type" => "array",
+        "prev_text" => "&larr;",
+        "next_text" => "&rarr;"
+      ));
 
-        if ($project_pagination):
-          foreach ($project_pagination as $page):
-      ?>
-        <li class="o-pagination__item"><?php echo $page ?></li>
-      <?php endforeach; endif; ?>
-    </ul>
-  </div>
+      if ($project_pagination):
+        foreach ($project_pagination as $page):
+    ?>
+      <li class="o-pagination__item"><?php echo $page ?></li>
+    <?php endforeach; endif; ?>
+  </ul>
 </div>
 
 <?php endif; ?>
