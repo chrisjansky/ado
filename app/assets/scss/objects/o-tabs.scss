@@ -1,15 +1,25 @@
 .o-tabs {
   padding-left: 0;
   @include clearfix;
+  list-style-type: none;
 
   margin-top: em($ratio--l);
 }
 
 .o-tabs__item {
-  display: inline;
+  @include media($small) {
+    overflow: auto;
 
-  & + & {
-    margin-left: em($ratio--xl);
+    & + & {
+      margin-top: em($ratio--b);
+    }
+  }
+  @include media($large) {
+    display: inline;
+
+    & + & {
+      margin-left: em($ratio--xl);
+    }
   }
 }
 

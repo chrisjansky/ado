@@ -1,0 +1,72 @@
+.o-work {
+  display: inline-block;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background-color: $grey--900;
+
+  @include media($phone) {
+    & + & {
+      margin-top: em($ratio--s);
+    }
+  }
+  @include media($portable) {
+    @include margin(null flex-gutter() / 2 flex-gutter() / 2);
+  }
+  @include media($medium) {
+    width: em(190);
+  }
+  @include media($desktop) {
+    width: em(240);
+  }
+}
+
+.o-work__image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  transition: opacity $duration--s;
+
+  .device--is-desktop .o-work:hover & {
+    opacity: .5;
+  }
+}
+.o-work__info {
+  display: block;
+
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+
+  text-align: left;
+
+  color: white;
+  @include padding(null em($ratio--s) em($unit--b) em($ratio--m));
+
+  .device--is-mobile & {
+    padding-top: em($ratio--m);
+    background-image: linear-gradient(transparent, $grey--800);
+  }
+
+  .device--is-desktop & {
+    transition: transform $duration--b;
+
+    transform: translateY(100%);
+  }
+  
+  .o-work:hover & {
+    transform: translateY(0);
+  }
+}
+.o-work__title {
+  @include margin(0 null);
+}
+.o-work__name {
+  color: rgba(white, .5);
+}

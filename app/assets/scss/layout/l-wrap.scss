@@ -1,0 +1,65 @@
+/*
+Wrap
+
+Added offwhite background for styleguide purposes.
+
+.l-wrap--small - Smaller.
+.l-wrap--big - Bigger.
+.l-wrap--vertical - Only vertical.
+.l-wrap--horizontal - Only horizontal.
+.l-wrap--no-top - No top padding.
+.l-wrap--no-bottom - No bottom padding.
+
+Markup:
+<div class="l-wrap {{modifier_class}}">Text.</div>
+
+Styleguide 2.1.
+*/
+
+[class^="l-wrap"],
+[class*=" l-wrap"] {
+  margin-right: auto;
+  margin-left: auto;
+  
+  @include clearfix;
+  @include collapse-children;
+}
+
+.l-wrap {
+  @include offset();
+}
+
+.l-wrap--small {
+  @include padding(em($ratio--s) null);
+  
+  @include media($phablet) {
+    @include padding(em($ratio--b) null);
+  }
+  @include media($large) {
+    @include padding(em($ratio--m) null);
+  }
+}
+
+.l-wrap--big {
+  @include padding(em($ratio--m) null);
+
+  @include media($phablet) {
+    @include padding(em($ratio--l) null);
+  }
+  @include media($large) {
+    @include padding(em($ratio--xl) null);
+  }
+}
+
+.l-wrap--vertical {
+  @include offset(vertical);
+}
+.l-wrap--horizontal {
+  @include offset(horizontal);
+}
+.l-wrap--top {
+  @include offset(top);
+}
+.l-wrap--bottom {
+  @include offset(bottom);
+}

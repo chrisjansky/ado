@@ -1,0 +1,63 @@
+.o-featured {
+  @include media($tablet) {
+    @include span-columns(6 of $columns__tablet);
+    @include omega(2n);
+
+    &:last-child {
+      @include shift(3);
+    }
+  }
+  @include media($desktop) {
+    @include span-columns(4 of $columns__desktop);
+  }
+}
+.o-featured__image {
+  height: auto;
+
+  @include margin(null auto);
+
+  transition: opacity $duration--s;
+}
+.o-featured__thumbnail {
+  display: inline-block;
+
+  position: relative;
+
+  background-color: $grey--900;
+
+  margin-bottom: em($ratio--m);
+
+  @include state--active {
+    .o-featured__image {
+      opacity: .5;
+    }
+    .o-featured__overlay {
+      opacity: 1;
+    }
+  }
+}
+.o-featured__overlay {
+  @include position(absolute, 50% 0 null 0);
+
+  transform: translateY(-50%);
+
+  color: white;
+
+  opacity: 0;
+  transition: opacity $duration--s;
+}
+.o-featured__link {
+  display: block;
+
+  text-decoration: none;
+}
+.o-featured__text {
+  text-align: left;
+}
+.o-featured__button {
+  font-size: em($ratio--m);
+
+  @include media($mobile) {
+    display: none;
+  }
+}

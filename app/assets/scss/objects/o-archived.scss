@@ -1,0 +1,27 @@
+.o-archived {
+  text-align: center;
+
+  & + & {
+    margin-top: em($ratio--l);
+
+    @include media($large) {
+      margin-top: em($ratio--xl);
+    }
+  }
+}
+.o-archived__date {
+  display: block;
+
+  margin-bottom: em($ratio--m);
+}
+.o-archived__content {
+  @include offset(horizontal);
+
+  max-width: em($width--xl);
+
+  @include margin(em($ratio--m) null auto);
+
+  @include media($large) {
+    margin-top: em($ratio--l);
+  }
+}

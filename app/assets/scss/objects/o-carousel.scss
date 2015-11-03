@@ -1,0 +1,81 @@
+// Ported over to delete .o-carousel__item padding
+
+/*
+Carousel
+
+Using Swiper Javascript library, pretty much identical to o-slider. Example with Featherlight links inside. Customize by defining item width.
+
+Markup:
+<div class="o-carousel swiper-container" data-carousel>
+  <ul class="o-carousel__list swiper-wrapper">
+    <li class="o-carousel__item swiper-slide">
+      <a href="http://unsplash.it/800/500/?random" class="o-carousel__link" data-featherlight="image">
+        <img class="o-carousel__image" src="http://unsplash.it/600/300/?random" alt="Carousel image">
+      </a>
+    </li>
+    <li class="o-carousel__item swiper-slide">
+      <a href="http://unsplash.it/800/500/?random" class="o-carousel__link" data-featherlight="image">
+        <img class="o-carousel__image" src="http://unsplash.it/600/300/?random" alt="Carousel image">
+      </a>
+    </li>
+  </ul>
+  <a href="#" class="o-carousel__arrow--prev" data-swiper--prev>&larr;</a>
+  <a href="#" class="o-carousel__arrow--next" data-swiper--next>&rarr;</a>
+</div>
+
+Styleguide 4.55.
+*/
+
+.o-carousel {
+  user-select: none;
+  // Important to set box-sizing!
+  box-sizing: content-box;
+}
+
+.o-carousel--large {
+  height: 70vh;
+
+  max-height: em(500);
+}
+
+.o-carousel--small {
+  height: 60vh;
+
+  max-width: em(360);
+}
+
+.o-carousel__list {
+  @include reset-list;
+  &:hover {
+    cursor: grab;
+  }
+}
+
+.o-carousel__item {
+  width: auto;
+  max-width: 70vw;
+
+  @include pseudo-center--parent;
+
+  box-sizing: border-box;
+
+
+  opacity: .25;
+
+  transition: opacity $duration--b;
+
+  @include margin(null em($ratio--s));
+
+  @include media($large) {
+    @include margin(null em($ratio--b));
+  }
+}
+
+.o-carousel__image {
+  display: inline-block;
+
+  max-width: 100%;
+  max-height: 100%;
+
+  vertical-align: middle;
+}

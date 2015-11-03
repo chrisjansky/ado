@@ -1,0 +1,58 @@
+/*
+Inline
+
+Table-cell display to put things beside.
+
+Markup:
+<div class="l-inline {{modifier_class}}">
+  <div class="l-inline__cell">Text.</div>
+  <div class="l-inline__cell">Another text.</div>
+</div>
+
+Styleguide 2.2.
+*/
+
+.l-inline__cell {
+  text-align: center;
+
+  &:first-child > :first-child {
+    margin-top: 0;
+  }
+}
+
+@include media($large) {
+  [class^="l-inline--"],
+  [class*=" l-inline--"] {
+    display: table;
+
+    width: 100%;
+  }
+
+  .l-inline--sooner .l-inline__cell {
+    display: table-cell;
+    vertical-align: middle;
+    @include collapse-children;
+
+    &:first-child {
+      text-align: left; 
+    }
+    &:last-child {
+      text-align: right;
+    }
+  }
+}
+
+@include media($desktop) {
+  .l-inline--later .l-inline__cell {
+    display: table-cell;
+    vertical-align: middle;
+    @include collapse-children;
+
+    &:first-child {
+      text-align: left; 
+    }
+    &:last-child {
+      text-align: right;
+    }
+  }
+}
