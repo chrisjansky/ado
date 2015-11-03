@@ -1,41 +1,41 @@
-section#gallery.m-gallery(data-section, data-mixitup)
-  .l-wrap
-    h2.t-head--higher Vybrané práce
+section#gallery.m-gallery.l-wrap--horizontal.o-section(data-section, data-mixitup)
+  h2.t-head--higher Vybrané práce
 
-    ul.o-filter
-      li.o-filter__item
-        button.o-toggle.t-link--secondary.t-caps(data-filter="all") Vše
-      li.o-filter__item
-        button.o-toggle.t-link--secondary.t-caps(data-filter=".awarded") Oceněné
-      li.o-filter__item
-        button.o-toggle.t-link--secondary.t-caps(data-filter=".collaboration") Spolupráce
-      li.o-filter__item
-        button.o-toggle.t-link--secondary.t-caps(data-filter=".bachelor") Bakalářské
-      li.o-filter__item
-        button.o-toggle.t-link--secondary.t-caps(data-filter=".master") Magisterské
-      li.o-filter__item
-        button.o-toggle.t-link--secondary.t-caps(data-filter=".finals") Klauzury
+  ul.o-filter
+    li.o-filter__item
+      button.o-toggle.t-link--secondary.t-caps(data-filter="all") Vše
+    li.o-filter__item
+      button.o-toggle.t-link--secondary.t-caps(data-filter=".awarded") Oceněné
+    li.o-filter__item
+      button.o-toggle.t-link--secondary.t-caps(data-filter=".collaboration") Spolupráce
+    li.o-filter__item
+      button.o-toggle.t-link--secondary.t-caps(data-filter=".bachelor") Bakalářské
+    li.o-filter__item
+      button.o-toggle.t-link--secondary.t-caps(data-filter=".master") Magisterské
+    li.o-filter__item
+      button.o-toggle.t-link--secondary.t-caps(data-filter=".finals") Klauzury
 
-    .m-works
-      .m-works__list
-        - var workCount = 8
-        while workCount > 0
-          - var random = Math.floor((Math.random() * 5) + 1)
-          - var tags
-          case random
-            when 1
-              - tags = "bachelor awarded"
-            when 2
-              - tags = "collaboration"
-            when 3
-              - tags = "finals"
-            when 4
-              - tags = "master collaboration"
+  .m-works
+    .m-works__list
+      - var workCount = 8
+      while workCount > 0
+        - var random = Math.floor((Math.random() * 5) + 1)
+        - var tags
+        case random
+          when 1
+            - tags = "bachelor awarded"
+          when 2
+            - tags = "collaboration"
+          when 3
+            - tags = "finals"
+          when 4
+            - tags = "master collaboration"
 
-          a.o-work(href="project-detail", class=tags, data-target)
-            img.o-work__image(src="http://unsplash.it/600/600/?image=#{random * 2}", alt="unsplash.it")
-            .o-work__info
-              h3.o-work__title.t-head--bottom Název práce
-              span.o-work__name.t-smallcaps Jméno Příjmení
-          - workCount--
-      a#js-workbutton.m-works__link.o-textlink.t-link--primary(href="projects") Další práce
+        a.o-work(href="project-detail", class=tags, data-target)
+          img.o-work__image(src="http://unsplash.it/600/600/?image=#{random * 2}", alt="unsplash.it")
+          .o-work__info
+            h3.o-work__title.t-head--bottom Název práce
+            span.o-work__name.t-smallcaps Jméno Příjmení
+        - workCount--
+    a#js-workbutton.m-works__link.t-link--primary.o-textlink(href="projects")
+      span.o-textlink__text Další práce
