@@ -70,3 +70,8 @@
 .o-work__name {
   color: rgba(white, .5);
 }
+
+[data-target] {
+  // Idiotic way of making MixItUp work.
+  display: none;
+}
