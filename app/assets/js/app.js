@@ -5,3 +5,6 @@ var
 
 var
   vHeight = window.innerHeight;
+
+var
+  $body = $("body");
