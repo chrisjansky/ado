@@ -3,7 +3,7 @@ extends templates/_site
 block template-content
   +header("subpage")
 
-  .l-nudge.l-wrap
+  .l-nudge
     h1.t-head--higher Všechny aktuality
 
   .m-archive
@@ -13,19 +13,19 @@ block template-content
           h2.o-archived__title.t-head--high: +dummy(5, "words")
           span.o-archived__date.t-smallcaps 27 02 2015
 
-          .o-carousel.swiper-container(data-swiper)
+          .o-carousel.o-carousel--small.swiper-container(data-swiper)
             ul.o-carousel__list.swiper-wrapper
               each photoNumber in [1, 2, 3]
-                li.o-carousel__item.o-carousel__item--small.swiper-slide
-                  img(src="http://unsplash.it/#{(index + 1 + photoNumber) * 50}/400/?image=#{index + photoNumber * 25}", alt="unsplash.it")
+                li.o-carousel__item.swiper-slide
+                  img.o-carousel__image(src="http://unsplash.it/#{(index + 1 + photoNumber) * 50}/400/?image=#{index + photoNumber * 25}", alt="unsplash.it")
 
           .o-archived__content
             p.t-paragraph: +dummy(article * 15)
 
-    .l-wrap
-      ul.o-pagination
-        li.o-pagination__item.o-pagination__item--active
-          span.o-pagination__number 1
-        each page in ["2", "3", "4"]
-          li.o-pagination__item
-            a.o-pagination__link(href="#")= page
+  footer.o-section.l-wrap.l-wrap--big
+    ul.o-pagination
+      li.o-pagination__item.o-pagination__item--active
+        span.o-pagination__number 1
+      each page in ["2", "3", "4"]
+        li.o-pagination__item
+          a.o-pagination__link(href="#")= page

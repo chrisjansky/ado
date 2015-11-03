@@ -3,19 +3,20 @@ extends templates/_site
 block template-content
   +header("subpage")
 
-  .m-profile.l-nudge.l-wrap
+  .l-nudge
     h1.t-head--higher Pavla Nováková
 
-  .m-works
-    - var workCount = 10
-    while workCount > 0
-      a.o-work(href="project-detail")
-        img.o-work__image(src="assets/images/gallery/#{workCount}.jpg", alt="Image")
-        .o-work__info
-          h3.o-work__title.t-head--bottom Název práce
-      - workCount--
+  section.m-works.l-wrap--horizontal
+    .m-works__list
+      - var workCount = 10
+      while workCount > 0
+        a.o-work(href="project-detail")
+          img.o-work__image(src="http://unsplash.it/400/400/?image=#{workCount * 14 + 1}", alt="Image")
+          .o-work__info
+            h3.o-work__title.t-head--bottom Název práce
+        - workCount--
 
-  .m-students(data-section)
+  section.m-students.o-section.l-wrap(data-section)
     h2.t-head--high Další studenti a absolventi
 
     .m-students__content

@@ -8,7 +8,7 @@ block template-content
     .o-bar
       .o-bar__title
         span.t-caps Pavla Nováková
-      .l-inline
+      .l-inline--sooner
         .l-inline__cell
           a.o-iconlink(href="index#section-gallery")
             i.o-iconlink__icon--left.ion-ios-arrow-left
@@ -18,11 +18,11 @@ block template-content
             span.t-caps Další práce studenta 
             i.o-iconlink__icon--right.ion-ios-arrow-right
 
-  .o-carousel.swiper-container(data-swiper).l-wrap.l-wrap--horizontal
+  .o-carousel.o-carousel--large.swiper-container(data-swiper).l-wrap--horizontal
     ul.o-carousel__list.swiper-wrapper
       each photoNumber in ["1", "2", "3"]
-        li.o-carousel__item.o-carousel__item--large.swiper-slide
-          img(src="http://unsplash.it/#{photoNumber * 300}/600/?image=#{photoNumber * 25}", alt="unsplash.it")
+        li.o-carousel__item.swiper-slide
+          img.o-carousel__image(src="http://unsplash.it/#{photoNumber * 300}/600/?image=#{photoNumber * 25}", alt="unsplash.it")
 
   mark.o-error
     span.o-error__icon.ion-alert

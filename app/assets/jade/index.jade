@@ -3,9 +3,10 @@ extends templates/_site
 block template-content
   +header("homepage")
 
-  section.m-hero(style="background-image: url('assets/images/bg_top.jpg');")
-    h1.t-head--top.m-hero__head Vítejte na webu jediného vš ateliéru designu obuvi.
-    a.m-hero__arrow(href="#gallery", data-scrollto).link-arrow.ion-ios-arrow-down
+  section.m-hero
+    .m-hero__background(style="background-image: url('assets/images/bg_top.jpg');")
+      h1.t-head--top.m-hero__head Vítejte na webu jediného vš ateliéru designu obuvi.
+      a.m-hero__arrow(href="#gallery", data-scrollto).link-arrow.ion-ios-arrow-down
     
   include sections/_featured-work
   include sections/_about

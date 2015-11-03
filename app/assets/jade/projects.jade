@@ -3,7 +3,7 @@ extends templates/_site
 block template-content
   +header("subpage")
 
-  .l-nudge.l-wrap
+  .l-nudge
     h1.t-head--higher Všechny práce
 
     ul.o-filter
@@ -20,17 +20,18 @@ block template-content
       li.o-filter__item
         a.t-link--secondary.t-caps(href="#") Klauzury
 
-    .m-works
-      .m-works__list
-        - var workCount = 30
-        while workCount > 0
-          a.o-work(href="project-detail")
-            img.o-work__image(src="http://unsplash.it/400/400/?image=#{workCount * 14 + 1}", alt="unsplash.it")
-            .o-work__info
-              h3.o-work__title.t-head--bottom Název práce
-              span.o-work__name.t-smallcaps Jméno Příjmení
-          - workCount--
+  section.m-works.l-wrap--horizontal
+    .m-works__list
+      - var workCount = 30
+      while workCount > 0
+        a.o-work(href="project-detail")
+          img.o-work__image(src="http://unsplash.it/400/400/?image=#{workCount * 14 + 1}", alt="unsplash.it")
+          .o-work__info
+            h3.o-work__title.t-head--bottom Název práce
+            span.o-work__name.t-smallcaps Jméno Příjmení
+        - workCount--
 
+  footer.o-section.l-wrap.l-wrap--big
     ul.o-pagination
       li.o-pagination__item.o-pagination__item--active
         span.o-pagination__number 1
