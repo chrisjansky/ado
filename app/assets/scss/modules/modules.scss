@@ -36,7 +36,12 @@
 
   @include margin(0 null);
 
-  text-align: center;
+  @include media($mobile) {
+    text-align: center;
+  }
+  @include media($desktop) {
+    top: 70%;
+  }
 }
 
 .m-hero__arrow {
