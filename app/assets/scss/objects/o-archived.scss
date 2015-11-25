@@ -19,7 +19,7 @@
 
   max-width: em($width--xl);
 
-  @include margin(em($ratio--m) null auto);
+  @include margin(em($ratio--m) auto null);
 
   @include media($large) {
     margin-top: em($ratio--l);

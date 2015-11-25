@@ -30,6 +30,8 @@ Styleguide 4.55.
   user-select: none;
   // Important to set box-sizing!
   box-sizing: content-box;
+
+  min-height: em(300);
 }
 
 .o-carousel--large {
@@ -41,7 +43,7 @@ Styleguide 4.55.
 .o-carousel--small {
   height: 60vh;
 
-  max-width: em(360);
+  max-height: em(360);
 }
 
 .o-carousel__list {
