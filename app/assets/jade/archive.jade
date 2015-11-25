@@ -17,7 +17,7 @@ block template-content
             ul.o-carousel__list.swiper-wrapper
               each photoNumber in [1, 2, 3]
                 li.o-carousel__item.swiper-slide
-                  img.o-carousel__image(src="http://unsplash.it/#{(index + 1 + photoNumber) * 50}/400/?image=#{index + photoNumber * 25}", alt="unsplash.it")
+                  img.o-carousel__image(src="http://unsplash.it/#{(index + 1 + photoNumber) * 100}/400/?image=#{index + photoNumber * 25}", alt="unsplash.it")
 
           .o-archived__content
             p.t-paragraph: +dummy(article * 15)
